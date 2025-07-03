@@ -25,8 +25,8 @@ const Section1 = () => {
   }, []);
 
   const paragraphs = [
-    "Discover COLOR LINK, your trusted source for high-quality Garments accessories manufacturers in Bangladesh. We are the most popular Garments accessories manufacturer & supplier company in Bangladesh.",
-    "At COLOR LINK, we specialize in producing a wide range of premium garment accessories including Hangtags, Labels, Stickers, Twill Tape, Satin Bows, Elastic, and more.",
+    "Discover Front Line BD, your trusted source for high-quality Garments accessories manufacturers in Bangladesh. We are the most popular Garments accessories manufacturer & supplier company in Bangladesh.",
+    "At Front Line BD, we specialize in producing a wide range of premium garment accessories including Hangtags, Labels, Stickers, Twill Tape, Satin Bows, Elastic, and more.",
     "Our commitment to excellence, innovation, and sustainability makes us the preferred partner for leading brands worldwide."
   ];
 
@@ -48,7 +48,7 @@ const Section1 = () => {
 
       <div className="relative z-10">
         <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#016DB8] text-center mb-10 leading-tight">
-          Welcome To COLOR LINK - Garments Accessories <br />
+          Welcome To Front Line BD - Garments Accessories <br />
           Manufacturer & Supplier In Bangladesh
         </h1>
 

@@ -1,5 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
+import { FaChevronRight } from 'react-icons/fa';
+import {  FaTimes } from 'react-icons/fa';
 
 // Image imports
 import Bow1 from '../../assets/Garments Accessories/Bow1.jpg';
@@ -48,6 +50,7 @@ import TwillTape1 from '../../assets/Garments Accessories/TwillTape1.jpg';
 import TwillTape2 from '../../assets/Garments Accessories/TwillTape2.jpg';
 import TwillTape3 from '../../assets/Garments Accessories/TwillTape3.jpg';
 
+// Categories object
 const categories = {
   Bow: [Bow1, Bow2, Bow3],
   Button: [Button1, Button2, Button3],
@@ -57,7 +60,7 @@ const categories = {
   Label: [Label1, Label2, Label3],
   'Mobilon Tape': [MobilonTape1, MobilonTape2, MobilonTape3],
   'Plastic Clip': [PlasticClip1, PlasticClip2, PlasticClip3],
-  PomPom: [PomPom1, PomPom2, PomPom3],
+  'Pom Pom': [PomPom1, PomPom2, PomPom3],
   'Ring Slider': [RingSlider1, RingSlider2, RingSlider3],
   'Satin Tape': [SatinTape1, SatinTape2, SatinTape3],
   'Silica Gel': [SilicaGel1, SilicaGel2, SilicaGel3],
@@ -67,6 +70,7 @@ const categories = {
 };
 
 const Section1 = () => {
+  // refs for scrolling to each category
   const sectionRefs = Object.keys(categories).reduce((acc, key) => {
     acc[key] = useRef(null);
     return acc;
@@ -76,26 +80,44 @@ const Section1 = () => {
     sectionRefs[category]?.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Lightbox state
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
+
+  const openLightbox = (imgSrc) => {
+    setCurrentImage(imgSrc);
+    setIsOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setIsOpen(false);
+    setCurrentImage(null);
+  };
+
   return (
     <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-6">
-      {/* Top Title */}
-      <h1 className="text-3xl md:text-4xl font-bold text-orange-500 mb-8 text-center">
+      {/* Header */}
+      <h1 className="text-3xl md:text-4xl font-bold text-[#016DB8] mb-8 text-center">
         Garments Accessories
       </h1>
 
       <div className="flex flex-col md:flex-row gap-6">
         {/* Sidebar */}
-        <div className="md:w-1/4 w-full sticky top-6 max-h-[90vh] overflow-y-auto custom-scrollbar">
-          <div className="bg-white p-4 shadow rounded">
-            <h2 className="text-lg font-semibold mb-4 text-center">Accessories Category</h2>
-            <div className="flex flex-col gap-2">
+        <div className="md:w-1/4 w-full">
+          <div className="sticky top-6 bg-white p-4 ">
+            <h2 className="relative font-semibold mb-4 text-center text-2xl text-gray-800">
+              Category
+              <span className="absolute left-1/2 -bottom-1 w-24 h-[2px] bg-[#016DB8] transform -translate-x-1/2 rounded"></span>
+            </h2>
+
+            <div className="flex flex-col ">
               {Object.keys(categories).map((category) => (
                 <button
                   key={category}
                   onClick={() => scrollToCategory(category)}
-                  className="flex items-center gap-2 px-4 py-3 text-base text-left font-medium text-gray-800 rounded hover:bg-blue-100 transition focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="flex items-center gap-2 text-sm py-1 px-2 border-b border-gray-300 text-gray-700 hover:text-[#016DB8] transition-colors text-left"
                 >
-                  <FaCheckCircle className="text-blue-500" />
+                  <FaChevronRight className="text-white text-xs bg-[#ED1C25] rounded-full" />
                   {category}
                 </button>
               ))}
@@ -103,7 +125,7 @@ const Section1 = () => {
           </div>
         </div>
 
-        {/* Main Content */}
+        {/* Content */}
         <div className="md:w-3/4 w-full">
           {Object.entries(categories).map(([categoryName, images]) => (
             <div
@@ -111,19 +133,29 @@ const Section1 = () => {
               ref={sectionRefs[categoryName]}
               className="mb-12 scroll-mt-24"
             >
-              <h2 className="flex items-center gap-2 text-xl sm:text-2xl font-bold text-green-600 mb-4">
-                <FaCheckCircle className="text-green-600" />
+              <h2 className="flex items-center gap-2 text-xl sm:text-2xl font-bold text-[#016DB8] mb-4">
+                <FaCheckCircle className="text-[#016DB8]" />
                 {categoryName}
               </h2>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {images.map((img, idx) => (
-                  <div key={idx} className="w-full overflow-hidden rounded shadow-md">
+                  <div
+                    key={idx}
+                    className="relative w-full overflow-hidden rounded shadow-md cursor-pointer"
+                    onClick={() => openLightbox(img)}
+                  >
                     <img
                       src={img}
                       alt={`${categoryName} ${idx + 1}`}
                       className="w-full h-48 object-cover rounded hover:scale-105 transition-transform duration-300"
                     />
+
+                    {/* Overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#ED1C25] via-[#016DB8] to-transparent opacity-0 hover:opacity-90 transition-opacity duration-300 flex items-end p-4 rounded cursor-pointer
+                                    translate-y-full hover:translate-y-0 transform transition-transform duration-300">
+                      <p className="text-white font-semibold text-lg">{`${categoryName} ${idx + 1}`}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -131,6 +163,29 @@ const Section1 = () => {
           ))}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          onClick={closeLightbox}
+        >
+          <button
+            className="absolute top-6 right-6 text-white text-3xl"
+            onClick={closeLightbox}
+            aria-label="Close"
+          >
+            <FaTimes />
+          </button>
+
+          <img
+            src={currentImage}
+            alt="Enlarged"
+            className="max-w-full max-h-full rounded shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 };

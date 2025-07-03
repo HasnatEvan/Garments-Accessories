@@ -13,7 +13,7 @@ const Footer = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
-    <footer className="bg-white text-black py-12 px-6 md:px-16">
+    <footer className="bg-white text-black py-12 px-6 md:px-16 border-t border-gray-200">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
 
         {/* Left section */}
@@ -27,17 +27,17 @@ const Footer = () => {
           <div className="flex items-start space-x-3">
             <FaHome className="text-[#ED1C25] mt-1" />
             <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-              35 No, 1st Floor Momin Road,<br />
-              Kadam Mubarak, Chittagong, Bangladesh
+            124, Sk. Mujib Road, (1st Floor)<br />
+             Agrabad, Chittagong, Bangladesh
             </p>
           </div>
           <div className="flex items-center space-x-3">
             <FaPhoneAlt className="text-[#ED1C25]" />
-            <p className="text-gray-700 text-sm md:text-base">+88 01926 08 32 58</p>
+            <p className="text-gray-700 text-sm md:text-base">+8801815814145</p>
           </div>
           <div className="flex items-center space-x-3">
             <FaEnvelope className="text-[#ED1C25]" />
-            <p className="text-gray-700 text-sm md:text-base">Didar@Colorlinkbd.Com</p>
+            <p className="text-gray-700 text-sm md:text-base">info@frontlinebd.net</p>
           </div>
         </div>
 
@@ -79,7 +79,7 @@ const Footer = () => {
               )}
             </li>
 
-            <li className="cursor-pointer hover:text-[#016DB8]">Blog</li>
+            <li className="cursor-pointer hover:text-[#016DB8]">Gallery</li>
             <li className="cursor-pointer hover:text-[#016DB8]">Contact Us</li>
           </ul>
         </div>

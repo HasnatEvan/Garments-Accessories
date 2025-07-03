@@ -1,9 +1,13 @@
 import ContactFrom from "./ContactFrom";
+import GoogleMap from "./GoogleMap";
+import HeroSection from "./HeroSection";
 
 const Contact = () => {
     return (
         <div>
+            <HeroSection></HeroSection>
             <ContactFrom></ContactFrom>
+            <GoogleMap></GoogleMap>
         </div>
     );
 };

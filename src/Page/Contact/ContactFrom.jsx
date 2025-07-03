@@ -1,28 +1,54 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import {
-  FaPhoneAlt,
-  FaFacebookF,
-  FaTwitter,
-  FaVimeoV,
-  FaPinterestP,
-  FaUser,
-  FaEnvelope,
-  FaRegEdit
+  FaPhoneAlt, FaFacebookF, FaTwitter, FaVimeoV, FaPinterestP,
+  FaUser, FaEnvelope, FaRegEdit, FaSpinner
 } from 'react-icons/fa';
 import { HiOutlineMailOpen } from 'react-icons/hi';
 import { IoMdPin } from 'react-icons/io';
 import { FiSend } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 const ContactFrom = () => {
-  return (
-    <div className="flex flex-col md:flex-row justify-between gap-10 px-4 sm:px-6 lg:px-20 py-10 sm:py-14 md:py-20 bg-white text-black">
+  const form = useRef();
+  const [isSending, setIsSending] = useState(false);
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSending(true);
+
+    emailjs
+      .sendForm('service_0d78ltq', 'template_92e56ch', form.current, {
+        publicKey: '4b_XIrPhrNR6Rctz4',
+      })
+      .then(() => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Message Sent!',
+          text: 'Thank you for contacting us.',
+          confirmButtonColor: '#016DB8'
+        });
+        form.current.reset();
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Failed to send message. Please try again.',
+          confirmButtonColor: '#ED1C25'
+        });
+        console.error('FAILED...', error.text);
+      })
+      .finally(() => setIsSending(false));
+  };
+
+  return (
+    <div className="flex flex-col md:flex-row justify-between gap-10 px-4 sm:px-6 lg:px-20 py-10 sm:py-14 md:py-20 bg-gray-50 text-black">
       {/* Left side: Contact Info */}
       <div className="w-full md:w-1/2 space-y-6">
         <h4 className="text-[#016DB8] font-semibold uppercase tracking-widest w-fit border-b-2 border-[#016DB8] pb-1 text-sm sm:text-base">
           Get In Touch
         </h4>
-
         <h2 className="text-3xl sm:text-4xl font-bold">Contact Us</h2>
 
         <div className="flex items-start gap-4">
@@ -30,9 +56,8 @@ const ContactFrom = () => {
           <div>
             <h5 className="font-semibold">Location</h5>
             <p className="text-gray-600 text-sm">
-              35 No, 1st Floor<br />
-              Momin Road, Kadam Mubara,<br />
-              Chittagong, Bangladesh
+              124, Sk. Mujib Road, (1st Floor)<br />
+              Agrabad, Chittagong, Bangladesh
             </p>
           </div>
         </div>
@@ -41,7 +66,7 @@ const ContactFrom = () => {
           <FaPhoneAlt className="text-[#ED1C25] text-lg sm:text-xl" />
           <div>
             <h5 className="font-semibold">Phone</h5>
-            <p className="text-gray-600 text-sm">+88 01926 08 32 58</p>
+            <p className="text-gray-600 text-sm">+8801815814145</p>
           </div>
         </div>
 
@@ -49,7 +74,7 @@ const ContactFrom = () => {
           <HiOutlineMailOpen className="text-[#ED1C25] text-xl sm:text-2xl" />
           <div>
             <h5 className="font-semibold">Email</h5>
-            <p className="text-gray-600 text-sm">didar@colorlinkbd.com</p>
+            <p className="text-gray-600 text-sm">info@frontlinebd.net</p>
           </div>
         </div>
 
@@ -66,7 +91,7 @@ const ContactFrom = () => {
         <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-center">Fill Up The Form</h2>
         <p className="text-gray-500 text-sm mb-6 text-center">Your email address will not be published. Required fields are marked *</p>
 
-        <form className="space-y-6">
+        <form ref={form} onSubmit={sendEmail} className="space-y-6">
           <div>
             <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
               <FaUser className="text-[#ED1C25]" />
@@ -74,6 +99,8 @@ const ContactFrom = () => {
             </label>
             <input
               type="text"
+              name="user_name"
+              required
               className="w-full border-b border-gray-300 bg-transparent outline-none py-2"
               placeholder="Enter your name"
             />
@@ -86,6 +113,8 @@ const ContactFrom = () => {
             </label>
             <input
               type="email"
+              name="user_email"
+              required
               className="w-full border-b border-gray-300 bg-transparent outline-none py-2"
               placeholder="example@mail.com"
             />
@@ -97,7 +126,9 @@ const ContactFrom = () => {
               Enter Your Message Here
             </label>
             <textarea
+              name="message"
               rows="4"
+              required
               className="w-full border-b border-gray-300 bg-transparent outline-none py-2 resize-none"
               placeholder="Write your message..."
             />
@@ -106,9 +137,15 @@ const ContactFrom = () => {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="flex items-center gap-2 bg-[#016DB8] hover:bg-[#016cb8cf] text-white px-6 py-3 rounded-md transition duration-300"
+              className="flex items-center gap-2 bg-[#016DB8] hover:bg-[#016cb8cf] text-white px-6 py-3 rounded-md transition duration-300 disabled:opacity-60"
+              disabled={isSending}
             >
-              <FiSend /> Get In Touch
+              {isSending ? (
+                <FaSpinner className="animate-spin" />
+              ) : (
+                <FiSend />
+              )}
+              {isSending ? 'Sending...' : 'Get In Touch'}
             </button>
           </div>
         </form>
