@@ -25,15 +25,17 @@ const Section1 = () => {
   }, []);
 
   const paragraphs = [
-    "Discover Front Line BD, your trusted source for high-quality Garments accessories manufacturers in Bangladesh. We are the most popular Garments accessories manufacturer & supplier company in Bangladesh.",
-    "At Front Line BD, we specialize in producing a wide range of premium garment accessories including Hangtags, Labels, Stickers, Twill Tape, Satin Bows, Elastic, and more.",
+    "Discover Front Line Bd, your trusted source for high-quality Garments accessories manufacturers in Bangladesh. We are the most popular Garments accessories manufacturer & supplier company in Bangladesh.",
+    "At Front Line Bd, we specialize in producing a wide range of premium garment accessories such as Hangtags, Labels, Stickers, Twill Tape, Satin Bows, Elastic, as well as all kinds of metal and plastics items, printed poly, Jacquard elastic and more.",
+    "The difference is our people. We always provide complete attention and priority for our honorable customers.",
+    "We have been working with many reputed retailers all over the world including WALMART, H&M, ZARA, GAP, C&A, ESPRIT, CARTER’S, M&S, FUNDAY, TEMA, MATALAN, SKIVA, G&W etc.",
     "Our commitment to excellence, innovation, and sustainability makes us the preferred partner for leading brands worldwide."
   ];
 
   return (
     <div
       ref={sectionRef}
-      className={`relative px-4 sm:px-6 py-12 md:py-20 max-w-7xl mx-auto
+      className={`relative px-4 sm:px-6 py-12 md:py-20 max-w-7xl mx-auto min-h-screen
         transition-opacity duration-700 ease-out
         ${isVisible ? 'opacity-100' : 'opacity-0'}
       `}
@@ -44,10 +46,9 @@ const Section1 = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* No overlay here to keep background clean */}
-
+      {/* Content wrapper with padding and max width */}
       <div className="relative z-10">
-        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#016DB8] text-center mb-10 leading-tight">
+        <h1 className="text-center md:text-left text-3xl sm:text-4xl md:text-5xl font-bold text-[#016DB8] mb-10 leading-tight">
           Welcome To Front Line BD - Garments Accessories <br />
           Manufacturer & Supplier In Bangladesh
         </h1>
@@ -63,14 +64,14 @@ const Section1 = () => {
             <img
               src={Image}
               alt="Office Team"
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
+              className="rounded-lg shadow-lg w-full h-auto object-cover max-h-[400px]"
               loading="lazy"
             />
           </div>
 
           {/* Text Section */}
           <div
-            className={`w-full md:w-1/2 text-black text-base sm:text-lg leading-relaxed md:leading-8 px-2 md:px-0`}
+            className="w-full md:w-1/2 text-black text-base sm:text-lg md:text-xl leading-relaxed md:leading-8 px-2 md:px-0 text-center md:text-left"
           >
             {paragraphs.map((text, idx) => (
               <p

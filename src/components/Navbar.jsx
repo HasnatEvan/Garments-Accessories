@@ -1,23 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
-  FiClock, FiPhoneCall, FiMapPin, FiHome, FiInfo, FiPhone, FiMenu, FiX, FiImage
+  FiClock, FiPhoneCall, FiMapPin, FiHome, FiInfo, FiPhone, FiMenu, FiX, FiImage,
 } from 'react-icons/fi';
 import { MdOutlineMail } from 'react-icons/md';
-import { FaFacebookF, FaTwitter, FaInstagram, FaPinterestP } from 'react-icons/fa';
+import {
+  FaFacebookF, FaTwitter, FaInstagram, FaPinterestP,
+} from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
 import logo from '../assets/Logo/Logo.png';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const dropdownRef = useRef(null);
+  const menuRef = useRef(null);
 
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // Close dropdown if clicked outside
       if (
         dropdownRef.current &&
         !dropdownRef.current.contains(event.target) &&
@@ -25,7 +30,17 @@ const Navbar = () => {
       ) {
         setIsDropdownOpen(false);
       }
+
+      // Close mobile menu if clicked outside
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        !event.target.closest('.menu-toggle')
+      ) {
+        setIsMobileMenuOpen(false);
+      }
     };
+
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
@@ -69,21 +84,21 @@ const Navbar = () => {
 
         <div className="hidden md:flex gap-6 mt-4 md:mt-0 text-sm">
           <div className="flex items-center gap-3">
-            <FiClock className="text-[#016DB8] text-3xl" />
+            <FiClock className="text-[#016DB8] text-2xl" />
             <div>
               <p className="font-semibold">Opening Hours</p>
               <p>Sat - Thu: 10.00 to 18.00</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <MdOutlineMail className="text-[#016DB8] text-3xl" />
+            <MdOutlineMail className="text-[#016DB8] text-2xl" />
             <div>
               <p className="font-semibold">Email Address</p>
               <p>info@frontlinebd.net</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <FiPhoneCall className="text-[#016DB8] text-3xl" />
+            <FiPhoneCall className="text-[#016DB8] text-2xl" />
             <div>
               <p className="font-semibold">Hotline</p>
               <p>+8801815814145</p>
@@ -92,12 +107,12 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Bottom Navbar - Sticky */}
+      {/* Bottom Navbar */}
       <nav className="sticky top-0 z-50 bg-[#016DB8] text-white px-4 md:px-16 py-8 lg:py-6">
-        {/* Mobile Menu Toggle Button */}
+        {/* Mobile Toggle Button */}
         <button
           onClick={toggleMobileMenu}
-          className="absolute right-4 top-3 md:hidden text-white text-3xl z-30"
+          className="menu-toggle absolute right-4 top-3 md:hidden text-white text-3xl z-30"
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <FiX /> : <FiMenu />}
@@ -105,6 +120,7 @@ const Navbar = () => {
 
         {/* Nav Links */}
         <div
+          ref={menuRef}
           className={`flex flex-col md:flex-row md:items-center md:space-x-6 w-full md:w-auto md:static absolute top-full left-0 bg-[#016DB8] md:bg-transparent z-20 transition-all duration-300 ease-in-out transform ${
             isMobileMenuOpen
               ? 'opacity-100 translate-y-0 visible'
@@ -153,13 +169,6 @@ const Navbar = () => {
                 onClick={() => setIsDropdownOpen(false)}
               >
                 Garments Accessories
-              </NavLink>
-              <NavLink
-                to="/product2"
-                className="block px-4 py-2 hover:bg-[#016DB8] hover:text-white"
-                onClick={() => setIsDropdownOpen(false)}
-              >
-                Garments Product
               </NavLink>
             </div>
           </div>

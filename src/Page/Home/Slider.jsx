@@ -1,0 +1,99 @@
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules'; // removed Pagination import
+import 'swiper/css';
+
+import image1 from '../../assets/Home_Page/slider/Bow2.jpg';
+import image2 from '../../assets/Home_Page/slider/Button3.jpg';
+import image3 from '../../assets/Home_Page/slider/Elastic_1.jpg';
+import image4 from '../../assets/Home_Page/slider/HangTag_2.jpg';
+import image5 from '../../assets/Home_Page/slider/HeatTransfer1.jpg';
+import image6 from '../../assets/Home_Page/slider/Label_1.jpg';
+import image7 from '../../assets/Home_Page/slider/PlasticClip1.jpg';
+import image8 from '../../assets/Home_Page/slider/PomPom3.jpg';
+import image9 from '../../assets/Home_Page/slider/Ring1Slider1.jpg';
+import image10 from '../../assets/Home_Page/slider/SatinTape1.jpg';
+import image11 from '../../assets/Home_Page/slider/Sticker3.jpg';
+import image12 from '../../assets/Home_Page/slider/TissuePaper1.jpg';
+import image13 from '../../assets/Home_Page/slider/TwillTape3.jpg';
+import BackgroundImage from '../../assets/Home_Page/slider/bg.jpg';
+
+const images = [
+  { src: image1, name: 'Bow' },
+  { src: image2, name: 'Button' },
+  { src: image3, name: 'Elastic' },
+  { src: image4, name: 'HangTag' },
+  { src: image5, name: 'Heat Transfer' },
+  { src: image6, name: 'Label' },
+  { src: image7, name: 'Plastic Clip' },
+  { src: image8, name: 'Pom Pom' },
+  { src: image9, name: 'Ring' },
+  { src: image10, name: 'Satin Tape' },
+  { src: image11, name: 'Sticker' },
+  { src: image12, name: 'Tissue Paper' },
+  { src: image13, name: 'Twill Tape' },
+];
+
+const Slider = () => {
+  return (
+    <div className="relative w-full py-2 px-4 sm:px-6 md:px-12">
+      {/* Blurred Background */}
+      <div
+        className="absolute inset-0 -z-10 bg-center bg-cover"
+        style={{
+          backgroundImage: `url(${BackgroundImage})`,
+          filter: 'blur(10px)',
+          backgroundColor: 'rgba(0, 0, 0, 0.4)',
+          backgroundBlendMode: 'darken',
+        }}
+      />
+
+      {/* Main Slider */}
+      <Swiper
+        modules={[Autoplay]} // Pagination removed
+        autoplay={{
+          delay: 1,
+          disableOnInteraction: false,
+        }}
+        speed={3000}
+        loop={true}
+        spaceBetween={20}
+        grabCursor={true}
+        slidesPerView={1.5}
+        breakpoints={{
+          480: { slidesPerView: 2 },
+          640: { slidesPerView: 2.5 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+          1280: { slidesPerView: 5 },
+          1536: { slidesPerView: 6 },
+        }}
+      >
+        {images.map(({ src, name }, index) => (
+          <SwiperSlide key={index}>
+            <div
+              className="relative  overflow-hidden transition-transform duration-300 hover:scale-105"
+              style={{
+                boxShadow: '0 0 15px rgba(0, 0, 0, 0.8)',
+              }}
+            >
+              <img
+                src={src}
+                alt={name}
+                className="w-full h-48 object-cover"
+              />
+              <div className="absolute bottom-0 w-full bg-black bg-opacity-50 text-white text-center py-2 text-sm font-semibold">
+                {name}
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Pagination div removed */}
+
+    </div>
+  );
+};
+
+export default Slider;

@@ -24,8 +24,8 @@ const Section1 = () => {
           viewport={{ once: false, amount: 0.3 }}
           className="flex flex-col items-center"
         >
-          <div className="border-4 border-[#ED1C25] rounded-full w-28 h-28 flex items-center justify-center mb-6">
-            <FaLightbulb className="text-[#ED1C25] text-4xl" />
+          <div className="border-4 border-[#016DB8] rounded-full w-28 h-28 flex items-center justify-center mb-6">
+            <FaLightbulb className="text-[#016DB8] text-4xl" />
           </div>
           <h3 className="text-[#016DB8] text-2xl font-bold mb-3">Our Motto</h3>
           <p className="text-black text-lg leading-relaxed max-w-md">
@@ -42,8 +42,8 @@ const Section1 = () => {
           viewport={{ once: false, amount: 0.3 }}
           className="flex flex-col items-center"
         >
-          <div className="border-4 border-[#ED1C25] rounded-full w-28 h-28 flex items-center justify-center mb-6">
-            <FaRocket className="text-[#ED1C25] text-4xl" />
+          <div className="border-4 border-[#016DB8] rounded-full w-28 h-28 flex items-center justify-center mb-6">
+            <FaRocket className="text-[#016DB8] text-4xl" />
           </div>
           <h3 className="text-[#016DB8] text-2xl font-bold mb-3">Our Mission</h3>
           <p className="text-black text-lg leading-relaxed max-w-md">
