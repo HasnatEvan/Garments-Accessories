@@ -47,7 +47,7 @@ const Section1 = () => {
       }}
     >
       {/* Content wrapper with padding and max width */}
-      <div className="relative z-10">
+      <div className="relative z-10 scree">
         <h1 className="text-center md:text-left text-3xl sm:text-4xl md:text-5xl font-bold text-[#016DB8] mb-10 leading-tight">
           Welcome To Front Line BD - Garments Accessories <br />
           Manufacturer & Supplier In Bangladesh

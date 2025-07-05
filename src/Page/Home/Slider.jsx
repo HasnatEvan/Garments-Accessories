@@ -1,8 +1,13 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules'; // removed Pagination import
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
+import image14 from '../../assets/Home_Page/slider/Metal_Item1.jpg';
+import image15 from '../../assets/Home_Page/slider/Plastic_Item1.webp';
+import image16 from '../../assets/Home_Page/slider/Printed_Poly1.jpg';
+import image17 from '../../assets/Home_Page/slider/Jacquard_Elastic1.jpg';
+import image18 from '../../assets/Home_Page/slider/PU_Leather3.jpg';
 import image1 from '../../assets/Home_Page/slider/Bow2.jpg';
 import image2 from '../../assets/Home_Page/slider/Button3.jpg';
 import image3 from '../../assets/Home_Page/slider/Elastic_1.jpg';
@@ -19,6 +24,11 @@ import image13 from '../../assets/Home_Page/slider/TwillTape3.jpg';
 import BackgroundImage from '../../assets/Home_Page/slider/bg.jpg';
 
 const images = [
+  { src: image14, name: 'Metal Item' },
+  { src: image15, name: 'Plastic Item' },
+  { src: image16, name: 'Printed Poly' },
+  { src: image17, name: 'Jacquard Elastic' },
+  { src: image18, name: 'PU Leather' },
   { src: image1, name: 'Bow' },
   { src: image2, name: 'Button' },
   { src: image3, name: 'Elastic' },
@@ -50,12 +60,12 @@ const Slider = () => {
 
       {/* Main Slider */}
       <Swiper
-        modules={[Autoplay]} // Pagination removed
+        modules={[Autoplay]}
         autoplay={{
-          delay: 1,
+          delay: 2000, // smooth delay between slides
           disableOnInteraction: false,
         }}
-        speed={3000}
+        speed={1000} // transition speed for smooth animation
         loop={true}
         spaceBetween={20}
         grabCursor={true}
@@ -72,9 +82,11 @@ const Slider = () => {
         {images.map(({ src, name }, index) => (
           <SwiperSlide key={index}>
             <div
-              className="relative  overflow-hidden transition-transform duration-300 hover:scale-105"
+              className="relative overflow-hidden transition-transform duration-300 hover:scale-105"
               style={{
                 boxShadow: '0 0 15px rgba(0, 0, 0, 0.8)',
+                transform: 'translate3d(0, 0, 0)', // GPU acceleration
+                willChange: 'transform',
               }}
             >
               <img
@@ -89,9 +101,6 @@ const Slider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      {/* Pagination div removed */}
-
     </div>
   );
 };

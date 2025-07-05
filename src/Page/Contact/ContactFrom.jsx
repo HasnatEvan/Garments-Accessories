@@ -1,7 +1,13 @@
 import React, { useRef, useState } from 'react';
 import {
-  FaPhoneAlt, FaFacebookF, FaTwitter, FaVimeoV, FaPinterestP,
-  FaUser, FaEnvelope, FaRegEdit, FaSpinner
+  FaPhoneAlt,
+  FaFacebookF,
+  FaTwitter,
+  FaWhatsapp,
+  FaUser,
+  FaEnvelope,
+  FaRegEdit,
+  FaSpinner
 } from 'react-icons/fa';
 import { HiOutlineMailOpen } from 'react-icons/hi';
 import { IoMdPin } from 'react-icons/io';
@@ -67,6 +73,7 @@ const ContactFrom = () => {
           <div>
             <h5 className="font-semibold">Phone</h5>
             <p className="text-gray-600 text-sm">+8801815814145</p>
+            <p className="text-gray-600 text-sm">+8801830226281</p> {/* নতুন নম্বর */}
           </div>
         </div>
 
@@ -78,11 +85,31 @@ const ContactFrom = () => {
           </div>
         </div>
 
+        {/* Social Icons */}
         <div className="flex items-center gap-4 pt-2">
-          <FaTwitter className="text-[#1DA1F2] text-xl" />
-          <FaFacebookF className="text-[#1877F2] text-xl" />
-          <FaVimeoV className="text-[#1AB7EA] text-xl" />
-          <FaPinterestP className="text-[#E60023] text-xl" />
+          <a
+            href="#"
+            aria-label="Facebook"
+            className="text-[#1877F2] hover:text-blue-800 text-xl"
+          >
+            <FaFacebookF />
+          </a>
+          <a
+            href="#"
+            aria-label="Twitter"
+            className="text-[#1DA1F2] hover:text-sky-600 text-xl"
+          >
+            <FaTwitter />
+          </a>
+          <a
+            href="https://wa.me/8801830226281"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="text-[#25D366] hover:text-green-600 text-xl"
+          >
+            <FaWhatsapp />
+          </a>
         </div>
       </div>
 

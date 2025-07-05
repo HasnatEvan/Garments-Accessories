@@ -3,7 +3,7 @@ import { FiUser, FiBriefcase, FiPhone, FiMail } from 'react-icons/fi';
 
 import image1 from '../../assets/About/image1.jpg';
 import image2 from '../../assets/About/iamge2.jpg';
-import Background from '../../assets/Home_Page/Background.jpg'; // background image
+import Background from '../../assets/Home_Page/Background.jpg';
 
 const people = [
   {
@@ -26,29 +26,33 @@ const people = [
 
 const Section2 = () => {
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-20 bg-white">
-      <div className="text-center mb-10">
+    <section className="py-16 px-4 sm:px-6 lg:px-20 bg-white">
+      <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-[#016DB8] inline-block border-b-4 border-[#016DB8] pb-2">
           Our Team
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
         {people.map((person, index) => (
           <div
             key={index}
-            className="p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-6 bg-cover bg-center"
+            className="p-6 sm:p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 bg-cover bg-center"
             style={{
               backgroundImage: `url(${Background})`,
               backgroundBlendMode: 'overlay',
-              backgroundColor: 'rgba(255, 255, 255, 0.8)',
+              backgroundColor: 'rgba(255, 255, 255, 0.85)',
             }}
           >
-            <img
-              src={person.image}
-              alt={person.name}
-              className="w-32 h-32 object-cover shadow-sm"
-            />
+            {/* Responsive Fixed Size Image */}
+            <div className="w-32 h-40 shrink-0">
+              <img
+                src={person.image}
+                alt={person.name}
+                className="w-full h-full object-cover rounded shadow"
+              />
+            </div>
+
             <div className="flex-1 text-center sm:text-left">
               <h3 className="text-xl font-bold text-[#016DB8] flex items-center justify-center sm:justify-start gap-2">
                 <FiUser /> {person.name}

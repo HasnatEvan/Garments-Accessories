@@ -5,7 +5,7 @@ import {
   FaEnvelope,
   FaFacebookF,
   FaTwitter,
-  FaYoutube,
+  FaWhatsapp
 } from 'react-icons/fa';
 import logo from '../assets/Logo/Logo.png';
 
@@ -13,7 +13,7 @@ const Footer = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
-    <footer className="bg-white text-black py-12 px-6 md:px-16 border-t border-gray-200">
+    <footer className="bg-white text-black pt-8 pb-2 px-6 md:px-16 border-t border-gray-200">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
 
         {/* Left section */}
@@ -27,8 +27,8 @@ const Footer = () => {
           <div className="flex items-start space-x-3">
             <FaHome className="text-[#ED1C25] mt-1" />
             <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-            124, Sk. Mujib Road, (1st Floor)<br />
-             Agrabad, Chittagong, Bangladesh
+              124, Sk. Mujib Road, (1st Floor)<br />
+              Agrabad, Chittagong, Bangladesh
             </p>
           </div>
           <div className="flex items-center space-x-3">
@@ -57,9 +57,8 @@ const Footer = () => {
               >
                 <span>Products</span>
                 <svg
-                  className={`w-4 h-4 ml-2 transition-transform duration-200 ${
-                    showDropdown ? 'rotate-180' : ''
-                  }`}
+                  className={`w-4 h-4 ml-2 transition-transform duration-200 ${showDropdown ? 'rotate-180' : ''
+                    }`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +73,6 @@ const Footer = () => {
               {showDropdown && (
                 <ul className="mt-2 ml-4 pl-2 border-l border-gray-300 space-y-1">
                   <li className="cursor-pointer hover:text-[#016DB8]">Garments Accessories</li>
-                  <li className="cursor-pointer hover:text-[#016DB8]">Garments Product</li>
                 </ul>
               )}
             </li>
@@ -90,29 +88,48 @@ const Footer = () => {
           <div className="flex space-x-4">
             <a
               href="#"
-              className="bg-blue-700 rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-blue-800"
+              className="bg-[#1877F2] rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-blue-800"
+              aria-label="Facebook"
             >
               <FaFacebookF />
             </a>
             <a
               href="#"
-              className="bg-blue-400 rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-blue-500"
+              className="bg-[#1DA1F2] rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-sky-600"
+              aria-label="Twitter"
             >
               <FaTwitter />
             </a>
             <a
-              href="#"
-              className="bg-red-600 rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-red-700"
+              href="https://wa.me/8801830226281"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#25D366] rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-green-600"
+              aria-label="WhatsApp"
             >
-              <FaYoutube />
+              <FaWhatsapp />
             </a>
           </div>
         </div>
+
       </div>
 
       {/* Copyright */}
       <div className="mt-16 text-gray-600 text-center text-xs md:text-sm border-t border-gray-300 pt-4">
         Copyright © 2024 <strong>Front Line Bd.</strong> All Rights Reserved.
+      </div>
+
+      {/* Developer credit */}
+      <div className="text-gray-500 text-center text-xs mt-2 ">
+        Developed by{' '}
+        <a
+          href="https://stalwart-pavlova-9b7a27.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#016DB8] hover:underline"
+        >
+          Hasnat Evan
+        </a>
       </div>
     </footer>
   );

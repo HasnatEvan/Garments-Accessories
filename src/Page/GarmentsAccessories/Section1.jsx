@@ -4,6 +4,25 @@ import { FaChevronRight } from 'react-icons/fa';
 import {  FaTimes } from 'react-icons/fa';
 
 // Image imports
+import MetalItem1 from '../../assets/Garments Accessories/Metal_Item1.jpg'
+import MetalItem2 from '../../assets/Garments Accessories/Metal_Item2.jpg'
+import MetalItem3 from '../../assets/Garments Accessories/Metal_Item3.jpg'
+import PlasticItem1 from '../../assets/Garments Accessories/Plastic_Item1.webp'
+import PlasticItem2 from '../../assets/Garments Accessories/Plastic_Item2.jpeg'
+import PlasticItem3 from '../../assets/Garments Accessories/Plastic_Item3.jpeg'
+
+import PrintedPoly1 from '../../assets/Garments Accessories/Printed_Poly1.jpg'
+import PrintedPoly2 from '../../assets/Garments Accessories/Printed_Poly2.webp'
+import PrintedPoly3 from '../../assets/Garments Accessories/Printed_Poly3.jpeg'
+
+import JacquardElastic1 from '../../assets/Garments Accessories/Jacquard_Elastic1.jpg'
+import JacquardElastic2 from '../../assets/Garments Accessories/Jacquard_Elastic2.jpeg'
+import JacquardElastic3 from '../../assets/Garments Accessories/Jacquard_Elastic3.jpg'
+import  PULeather1 from '../../assets/Garments Accessories/PU_Leather3.jpg'
+import  PULeather2 from '../../assets/Garments Accessories/PU_Leather2.webp'
+import  PULeather3 from '../../assets/Garments Accessories/PU_Leather1.jpg'
+
+
 import Bow1 from '../../assets/Garments Accessories/Bow1.jpg';
 import Bow2 from '../../assets/Garments Accessories/Bow2.jpg';
 import Bow3 from '../../assets/Garments Accessories/Bow3.jpg';
@@ -52,6 +71,11 @@ import TwillTape3 from '../../assets/Garments Accessories/TwillTape3.jpg';
 
 // Categories object
 const categories = {
+ " Metal Item":[MetalItem1,MetalItem2,MetalItem3],
+ " Plastic Item":[PlasticItem1,PlasticItem2,PlasticItem3],
+ "Printed Poly":[PrintedPoly1,PrintedPoly2,PrintedPoly3],
+ "Jacquard Elastic":[JacquardElastic1,JacquardElastic2,JacquardElastic3],
+ " PU Leather":[PULeather1,PULeather2,PULeather3],
   Bow: [Bow1, Bow2, Bow3],
   Button: [Button1, Button2, Button3],
   Elastic: [Elastic1, Elastic2, Elastic3],
@@ -126,42 +150,38 @@ const Section1 = () => {
         </div>
 
         {/* Content */}
-        <div className="md:w-3/4 w-full">
+        <main className="md:w-3/4 w-full">
           {Object.entries(categories).map(([categoryName, images]) => (
-            <div
+            <section
               key={categoryName}
               ref={sectionRefs[categoryName]}
-              className="mb-12 scroll-mt-24"
+              className="mb-14 scroll-mt-24"
             >
-              <h2 className="flex items-center gap-2 text-xl sm:text-2xl font-bold text-[#016DB8] mb-4">
-                <FaCheckCircle className="text-[#016DB8]" />
-                {categoryName}
+              <h2 className="flex items-center gap-2 text-2xl font-bold text-[#016DB8] mb-4">
+                <FaCheckCircle /> {categoryName}
               </h2>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                 {images.map((img, idx) => (
                   <div
                     key={idx}
-                    className="relative w-full overflow-hidden rounded shadow-md cursor-pointer"
                     onClick={() => openLightbox(img)}
+                    className="relative overflow-hidden rounded shadow-lg cursor-pointer group"
                   >
                     <img
                       src={img}
                       alt={`${categoryName} ${idx + 1}`}
-                      className="w-full h-48 object-cover rounded hover:scale-105 transition-transform duration-300"
+                      className="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300 rounded"
                     />
-
-                    {/* Overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#ED1C25] via-[#016DB8] to-transparent opacity-0 hover:opacity-90 transition-opacity duration-300 flex items-end p-4 rounded cursor-pointer
-                                    translate-y-full hover:translate-y-0 transform transition-transform duration-300">
-                      <p className="text-white font-semibold text-lg">{`${categoryName} ${idx + 1}`}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#ED1C25] via-[#016DB8] to-transparent opacity-0 group-hover:opacity-90 flex items-end p-4 rounded transition-opacity duration-300">
+                   
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
+            </section>
           ))}
-        </div>
+        </main>
       </div>
 
       {/* Lightbox Modal */}

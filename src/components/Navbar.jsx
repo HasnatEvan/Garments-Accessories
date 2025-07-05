@@ -4,9 +4,7 @@ import {
   FiClock, FiPhoneCall, FiMapPin, FiHome, FiInfo, FiPhone, FiMenu, FiX, FiImage,
 } from 'react-icons/fi';
 import { MdOutlineMail } from 'react-icons/md';
-import {
-  FaFacebookF, FaTwitter, FaInstagram, FaPinterestP,
-} from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaWhatsapp } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
 import logo from '../assets/Logo/Logo.png';
 
@@ -65,12 +63,23 @@ const Navbar = () => {
             124, Sk. Mujib Road, (1st Floor) Agrabad, Chittagong.
           </p>
         </div>
-        <div className="flex space-x-4 text-xl text-gray-600">
-          <a href="#"><FaFacebookF className="hover:text-orange-500" /></a>
-          <a href="#"><FaTwitter className="hover:text-orange-500" /></a>
-          <a href="#"><FaInstagram className="hover:text-orange-500" /></a>
-          <a href="#"><FaPinterestP className="hover:text-orange-500" /></a>
+        <div className="flex space-x-4 text-xl">
+          <a href="#" aria-label="Facebook">
+            <FaFacebookF className="hover:text-orange-500 text-[#1877F2]" />
+          </a>
+          <a href="#" aria-label="Twitter">
+            <FaTwitter className="hover:text-orange-500 text-[#1DA1F2]" />
+          </a>
+          <a
+            href="https://wa.me/8801830226281"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+          >
+            <FaWhatsapp className="hover:text-orange-500 text-[#25D366]" />
+          </a>
         </div>
+
       </div>
 
       {/* Middle Header */}
@@ -87,7 +96,7 @@ const Navbar = () => {
             <FiClock className="text-[#016DB8] text-2xl" />
             <div>
               <p className="font-semibold">Opening Hours</p>
-              <p>Sat - Thu: 10.00 to 18.00</p>
+              <p>Sat-Thu 9.00 am to 5 pm</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -121,11 +130,10 @@ const Navbar = () => {
         {/* Nav Links */}
         <div
           ref={menuRef}
-          className={`flex flex-col md:flex-row md:items-center md:space-x-6 w-full md:w-auto md:static absolute top-full left-0 bg-[#016DB8] md:bg-transparent z-20 transition-all duration-300 ease-in-out transform ${
-            isMobileMenuOpen
-              ? 'opacity-100 translate-y-0 visible'
-              : 'opacity-0 -translate-y-5 invisible md:visible md:opacity-100 md:translate-y-0'
-          }`}
+          className={`flex flex-col md:flex-row md:items-center md:space-x-6 w-full md:w-auto md:static absolute top-full left-0 bg-[#016DB8] md:bg-transparent z-20 transition-all duration-300 ease-in-out transform ${isMobileMenuOpen
+            ? 'opacity-100 translate-y-0 visible'
+            : 'opacity-0 -translate-y-5 invisible md:visible md:opacity-100 md:translate-y-0'
+            }`}
         >
           <NavLink
             to="/"
@@ -150,18 +158,16 @@ const Navbar = () => {
             >
               Products{' '}
               <IoIosArrowDown
-                className={`transition-transform duration-300 ${
-                  isDropdownOpen ? 'rotate-180' : ''
-                }`}
+                className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''
+                  }`}
               />
             </button>
 
             <div
-              className={`absolute left-0 mt-2 bg-white text-black shadow-lg rounded-md w-48 z-50 transform transition-all duration-300 origin-top ${
-                isDropdownOpen
-                  ? 'scale-100 opacity-100 visible'
-                  : 'scale-95 opacity-0 invisible'
-              }`}
+              className={`absolute left-0 mt-2 bg-white text-black shadow-lg rounded-md w-48 z-50 transform transition-all duration-300 origin-top ${isDropdownOpen
+                ? 'scale-100 opacity-100 visible'
+                : 'scale-95 opacity-0 invisible'
+                }`}
             >
               <NavLink
                 to="/garments-accessories"
