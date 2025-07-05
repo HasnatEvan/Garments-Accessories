@@ -17,7 +17,7 @@ const people = [
   {
     name: 'Md. Hasmat Ullah',
     role: 'Business Executive',
-    phone: '+88001830-226281',
+    phone: '+8801830226281',
     email: 'hasmat@frontlinebd.net',
     image: image2,
     description: `Md. Hasmat Ullah brings strong expertise in business development and client relationship management. He plays a key role in ensuring smooth communication with partners and clients. His proactive approach and commitment to excellence help drive the company’s growth and maintain long-term partnerships.`,
