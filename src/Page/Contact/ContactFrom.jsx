@@ -7,7 +7,7 @@ import {
   FaUser,
   FaEnvelope,
   FaRegEdit,
-  FaSpinner
+  FaSpinner,
 } from 'react-icons/fa';
 import { HiOutlineMailOpen } from 'react-icons/hi';
 import { IoMdPin } from 'react-icons/io';
@@ -32,7 +32,7 @@ const ContactFrom = () => {
           icon: 'success',
           title: 'Message Sent!',
           text: 'Thank you for contacting us.',
-          confirmButtonColor: '#016DB8'
+          confirmButtonColor: '#016DB8',
         });
         form.current.reset();
       })
@@ -41,7 +41,7 @@ const ContactFrom = () => {
           icon: 'error',
           title: 'Oops...',
           text: 'Failed to send message. Please try again.',
-          confirmButtonColor: '#ED1C25'
+          confirmButtonColor: '#ED1C25',
         });
         console.error('FAILED...', error.text);
       })
@@ -50,33 +50,36 @@ const ContactFrom = () => {
 
   return (
     <div className="flex flex-col md:flex-row justify-between gap-10 px-4 sm:px-6 lg:px-20 py-10 sm:py-14 md:py-20 bg-gray-50 text-black">
-      {/* Left side: Contact Info */}
+      {/* Left: Contact Info */}
       <div className="w-full md:w-1/2 space-y-6">
         <h4 className="text-[#016DB8] font-semibold uppercase tracking-widest w-fit border-b-2 border-[#016DB8] pb-1 text-sm sm:text-base">
           Get In Touch
         </h4>
-        <h2 className="text-3xl sm:text-4xl font-bold">Contact Us</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Contact Us</h2>
 
+        {/* Address */}
         <div className="flex items-start gap-4">
           <IoMdPin className="text-[#ED1C25] text-xl sm:text-2xl mt-1" />
           <div>
             <h5 className="font-semibold">Location</h5>
             <p className="text-gray-600 text-sm">
-              124, Sk. Mujib Road, (1st Floor)<br />
+              124, Sk. Mujib Road, (1st Floor)
+              <br />
               Agrabad, Chittagong, Bangladesh
             </p>
           </div>
         </div>
 
+        {/* Phone */}
         <div className="flex items-center gap-4">
           <FaPhoneAlt className="text-[#ED1C25] text-lg sm:text-xl" />
           <div>
             <h5 className="font-semibold">Phone</h5>
-            <p className="text-gray-600 text-sm">+8801815814145</p>
-            <p className="text-gray-600 text-sm">+8801830226281</p> {/* নতুন নম্বর */}
+            <p className="text-gray-600 text-sm">+8801830226281</p>
           </div>
         </div>
 
+        {/* Email */}
         <div className="flex items-center gap-4">
           <HiOutlineMailOpen className="text-[#ED1C25] text-xl sm:text-2xl" />
           <div>
@@ -85,7 +88,7 @@ const ContactFrom = () => {
           </div>
         </div>
 
-        {/* Social Icons */}
+        {/* Social Links */}
         <div className="flex items-center gap-4 pt-2">
           <a
             href="#"
@@ -113,12 +116,15 @@ const ContactFrom = () => {
         </div>
       </div>
 
-      {/* Right side: Form */}
-      <div className="w-full md:w-1/2 bg-gray-50 p-6 sm:p-8 rounded-md shadow-sm">
+      {/* Right: Form */}
+      <div className="w-full md:w-1/2 bg-white p-6 sm:p-8 rounded-md shadow-md">
         <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-center">Fill Up The Form</h2>
-        <p className="text-gray-500 text-sm mb-6 text-center">Your email address will not be published. Required fields are marked *</p>
+        <p className="text-gray-500 text-sm mb-6 text-center">
+          Your email address will not be published. Required fields are marked *
+        </p>
 
         <form ref={form} onSubmit={sendEmail} className="space-y-6">
+          {/* Name */}
           <div>
             <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
               <FaUser className="text-[#ED1C25]" />
@@ -133,6 +139,7 @@ const ContactFrom = () => {
             />
           </div>
 
+          {/* Email */}
           <div>
             <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
               <FaEnvelope className="text-[#ED1C25]" />
@@ -147,6 +154,7 @@ const ContactFrom = () => {
             />
           </div>
 
+          {/* Message */}
           <div>
             <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
               <FaRegEdit className="text-[#ED1C25]" />
@@ -161,6 +169,7 @@ const ContactFrom = () => {
             />
           </div>
 
+          {/* Button */}
           <div className="flex justify-center">
             <button
               type="submit"

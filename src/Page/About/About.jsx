@@ -1,4 +1,5 @@
 
+import MarqueeText from "../Home/MarqueeText";
 import AboutHeroSection from "./AboutHeroSection";
 import Section1 from "./Section1";
 import Section2 from "./Section2";
@@ -8,6 +9,7 @@ const About = () => {
     return (
         <div>
             <AboutHeroSection></AboutHeroSection>
+            <MarqueeText></MarqueeText>
             <Section1></Section1>
             <Section2></Section2>
 

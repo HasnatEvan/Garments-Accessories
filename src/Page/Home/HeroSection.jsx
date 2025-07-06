@@ -12,35 +12,35 @@ import image4 from "../../assets/Home_Page/Banner/image4.jpg";
 import image5 from "../../assets/Home_Page/Banner/image5.jpg";
 
 const HeroSection = () => {
-  const navigate = useNavigate(); // React Router hook
+  const navigate = useNavigate();
 
   const slides = [
     {
       image: image1,
       title: "Premium Quality Garments Accessories",
       description:
-        "We provide top-notch trims and accessories for modern fashion manufacturing. Our commitment to quality and consistency ensures that every detail enhances your product's appeal. From buttons to labels, every component is crafted to meet your brand’s standards.",
+        "We provide top-notch trims and accessories for modern fashion manufacturing. Every detail enhances your product's appeal, crafted to meet your brand’s standards.",
       buttonText: "Learn More",
     },
     {
       image: image3,
       title: "Innovative Fashion Solutions",
       description:
-        "Empowering fashion brands with creative and customized accessory solutions. We believe in design-driven functionality that elevates your garments and reflects your unique brand identity through every stitch, fold, and fastener.",
+        "Empowering brands with creative accessory solutions that elevate garments and reflect your unique identity.",
       buttonText: "Explore Solutions",
     },
     {
       image: image4,
       title: "Crafted with Precision and Care",
       description:
-        "Our accessories are engineered with care using the highest quality materials. From concept to creation, we maintain strict standards to ensure durability, sustainability, and aesthetic perfection in every piece we produce.",
+        "Our accessories use high-quality materials, ensuring durability, sustainability, and aesthetic perfection.",
       buttonText: "Our Craft",
     },
     {
       image: image5,
       title: "Trusted by Leading Brands",
       description:
-        "Our products are trusted by top garment manufacturers and fashion houses across the globe. We deliver reliability, fast turnaround, and outstanding customer service that makes us a preferred partner in the industry.",
+        "Trusted by top garment manufacturers worldwide, delivering reliability, fast turnaround, and excellent service.",
       buttonText: "Why Choose Us",
     },
   ];
@@ -74,7 +74,7 @@ const HeroSection = () => {
                   {slide.description}
                 </p>
                 <button
-                  onClick={() => navigate("/garments-accessories")}
+                  onClick={() => navigate("/products")}
                   className="bg-white text-black font-semibold px-5 py-2 rounded-md hover:bg-gray-200 transition-all duration-300"
                 >
                   {slide.buttonText}

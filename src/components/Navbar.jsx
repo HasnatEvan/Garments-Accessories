@@ -1,35 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
-  FiClock, FiPhoneCall, FiMapPin, FiHome, FiInfo, FiPhone, FiMenu, FiX, FiImage,
+  FiClock, FiPhoneCall, FiMapPin, FiHome, FiInfo, FiPhone, FiMenu, FiX, FiImage, FiBox,
 } from 'react-icons/fi';
 import { MdOutlineMail } from 'react-icons/md';
 import { FaFacebookF, FaTwitter, FaWhatsapp } from 'react-icons/fa';
-import { IoIosArrowDown } from 'react-icons/io';
 import logo from '../assets/Logo/Logo.png';
 
 const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const dropdownRef = useRef(null);
   const menuRef = useRef(null);
 
-  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // Close dropdown if clicked outside
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target) &&
-        !event.target.closest('.dropdown-toggle')
-      ) {
-        setIsDropdownOpen(false);
-      }
-
-      // Close mobile menu if clicked outside
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target) &&
@@ -79,11 +64,10 @@ const Navbar = () => {
             <FaWhatsapp className="hover:text-orange-500 text-[#25D366]" />
           </a>
         </div>
-
       </div>
 
-      {/* Middle Header */}
-      <div className="flex flex-col md:flex-row justify-between items-center bg-white px-4 md:px-16 py-6">
+      {/* Middle Header (Hidden on mobile) */}
+      <div className="hidden md:flex flex-col md:flex-row justify-between items-center bg-white px-4 md:px-16 py-6">
         <div className="flex items-center space-x-3">
           <img src={logo} alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
           <h1 className="text-2xl md:text-3xl font-extrabold text-[#016DB8]">
@@ -91,7 +75,7 @@ const Navbar = () => {
           </h1>
         </div>
 
-        <div className="hidden md:flex gap-6 mt-4 md:mt-0 text-sm">
+        <div className="flex gap-6 mt-4 md:mt-0 text-sm">
           <div className="flex items-center gap-3">
             <FiClock className="text-[#016DB8] text-2xl" />
             <div>
@@ -110,14 +94,24 @@ const Navbar = () => {
             <FiPhoneCall className="text-[#016DB8] text-2xl" />
             <div>
               <p className="font-semibold">Hotline</p>
-              <p>+8801815814145</p>
+              <p>+8801830226281</p>
             </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Navbar */}
-      <nav className="sticky top-0 z-50 bg-[#016DB8] text-white px-4 md:px-16 py-8 lg:py-6">
+      <nav className="sticky top-0 z-50 bg-[#016DB8]/95 text-white px-4 md:px-16 py-2 lg:py-6 backdrop-blur-md">
+        {/* Logo and Brand Name for mobile only */}
+        <div className="flex md:hidden items-center justify-between mb-2">
+          <div className="flex items-center gap-2">
+            <img src={logo} alt="Logo" className="w-8 h-8 object-contain" />
+            <h1 className="text-lg font-bold text-white">
+              <span className="text-[#ED1C25]">Front Line</span> BD
+            </h1>
+          </div>
+        </div>
+
         {/* Mobile Toggle Button */}
         <button
           onClick={toggleMobileMenu}
@@ -130,65 +124,44 @@ const Navbar = () => {
         {/* Nav Links */}
         <div
           ref={menuRef}
-          className={`flex flex-col md:flex-row md:items-center md:space-x-6 w-full md:w-auto md:static absolute top-full left-0 bg-[#016DB8] md:bg-transparent z-20 transition-all duration-300 ease-in-out transform ${isMobileMenuOpen
-            ? 'opacity-100 translate-y-0 visible'
-            : 'opacity-0 -translate-y-5 invisible md:visible md:opacity-100 md:translate-y-0'
-            }`}
+          className={`flex flex-col md:flex-row md:items-center md:space-x-6 w-full md:w-auto md:static absolute top-full left-0 right-0 bg-[#016DB8]/95 md:bg-transparent transition-all duration-500 ease-in-out transform ${
+            isMobileMenuOpen
+              ? 'opacity-100 translate-y-0 visible'
+              : 'opacity-0 -translate-y-5 invisible md:visible md:opacity-100 md:translate-y-0'
+          }`}
         >
           <NavLink
             to="/"
             exact="true"
-            className="flex items-center gap-1 py-2 md:py-0 hover:text-[#ED1C25]"
+            className="flex items-center gap-1 py-2 md:py-0 px-4 hover:text-[#ED1C25]"
           >
             <FiHome /> Home
           </NavLink>
 
           <NavLink
             to="/about"
-            className="flex items-center gap-1 py-2 md:py-0 hover:text-[#ED1C25]"
+            className="flex items-center gap-1 py-2 md:py-0 px-4 hover:text-[#ED1C25]"
           >
             <FiInfo /> About Us
           </NavLink>
 
-          {/* Dropdown */}
-          <div className="relative" ref={dropdownRef}>
-            <button
-              onClick={toggleDropdown}
-              className="dropdown-toggle flex items-center gap-1 py-2 md:py-0 hover:text-[#ED1C25]"
-            >
-              Products{' '}
-              <IoIosArrowDown
-                className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''
-                  }`}
-              />
-            </button>
-
-            <div
-              className={`absolute left-0 mt-2 bg-white text-black shadow-lg rounded-md w-48 z-50 transform transition-all duration-300 origin-top ${isDropdownOpen
-                ? 'scale-100 opacity-100 visible'
-                : 'scale-95 opacity-0 invisible'
-                }`}
-            >
-              <NavLink
-                to="/garments-accessories"
-                className="block px-4 py-2 hover:bg-[#016DB8] hover:text-white"
-                onClick={() => setIsDropdownOpen(false)}
-              >
-                Garments Accessories
-              </NavLink>
-            </div>
-          </div>
+          <NavLink
+            to="/products"
+            className="flex items-center gap-1 py-2 md:py-0 px-4 hover:text-[#ED1C25]"
+          >
+            <FiBox /> Products
+          </NavLink>
 
           <NavLink
             to="/gallery"
-            className="flex items-center gap-1 py-2 md:py-0 hover:text-[#ED1C25]"
+            className="flex items-center gap-1 py-2 md:py-0 px-4 hover:text-[#ED1C25]"
           >
             <FiImage /> Gallery
           </NavLink>
 
           <NavLink
             to="/contact"
-            className="flex items-center gap-1 py-2 md:py-0 hover:text-[#ED1C25]"
+            className="flex items-center gap-1 py-2 md:py-0 px-4 hover:text-[#ED1C25]"
           >
             <FiPhone /> Contact Us
           </NavLink>

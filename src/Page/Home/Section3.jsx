@@ -23,10 +23,14 @@ const Section3 = () => {
   return (
     <section className="py-10 bg-gray-50">
       {/* Title */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-4">
         <h2 className="text-2xl sm:text-3xl font-bold text-[#016DB8] pb-2 border-b-4 border-[#016DB8] inline-block">
-         OUR VENDORS
+          Our Vendors
         </h2>
+        {/* Small Description */}
+        <p className="mt-2 max-w-xl mx-auto text-gray-600 text-sm sm:text-base">
+          We proudly collaborate with these trusted vendors who ensure top-quality products and services for our clients.
+        </p>
       </div>
 
       {/* Marquee */}

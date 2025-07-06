@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div>
             <HeroSection></HeroSection>
-            <MarqueeText></MarqueeText>
+            {/* <MarqueeText></MarqueeText> */}
             <Section1></Section1>
             <Slider></Slider>
             <Section2></Section2>

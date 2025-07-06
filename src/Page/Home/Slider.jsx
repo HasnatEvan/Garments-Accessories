@@ -46,7 +46,7 @@ const images = [
 
 const Slider = () => {
   return (
-    <div className="relative w-full py-2 px-4 sm:px-6 md:px-12">
+    <div className="relative w-full py-6 px-4 sm:px-6 md:px-12">
       {/* Blurred Background */}
       <div
         className="absolute inset-0 -z-10 bg-center bg-cover"
@@ -62,10 +62,10 @@ const Slider = () => {
       <Swiper
         modules={[Autoplay]}
         autoplay={{
-          delay: 2000, // smooth delay between slides
+          delay: 2000,
           disableOnInteraction: false,
         }}
-        speed={1000} // transition speed for smooth animation
+        speed={1000}
         loop={true}
         spaceBetween={20}
         grabCursor={true}
@@ -78,23 +78,21 @@ const Slider = () => {
           1280: { slidesPerView: 5 },
           1536: { slidesPerView: 6 },
         }}
+        className="pb-4"
       >
         {images.map(({ src, name }, index) => (
           <SwiperSlide key={index}>
             <div
-              className="relative overflow-hidden transition-transform duration-300 hover:scale-105"
-              style={{
-                boxShadow: '0 0 15px rgba(0, 0, 0, 0.8)',
-                transform: 'translate3d(0, 0, 0)', // GPU acceleration
-                willChange: 'transform',
-              }}
+              className="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+              style={{ boxShadow: '0 0 15px rgba(0, 0, 0, 0.8)' }}
             >
               <img
                 src={src}
                 alt={name}
                 className="w-full h-48 object-cover"
+                loading="lazy"
               />
-              <div className="absolute bottom-0 w-full bg-black bg-opacity-50 text-white text-center py-2 text-sm font-semibold">
+              <div className="absolute bottom-0 w-full bg-black bg-opacity-60 text-white text-center py-2 text-sm font-semibold">
                 {name}
               </div>
             </div>

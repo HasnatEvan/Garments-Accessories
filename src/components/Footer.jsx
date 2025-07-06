@@ -13,7 +13,7 @@ const Footer = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
   return (
-    <footer className="bg-white text-black pt-8 pb-2 px-6 md:px-16 border-t border-gray-200">
+    <footer className="bg-white text-black pt-8 pb-6 px-6 md:px-16 border-t border-gray-200">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
 
         {/* Left section */}
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center space-x-3">
             <FaPhoneAlt className="text-[#ED1C25]" />
-            <p className="text-gray-700 text-sm md:text-base">+8801815814145</p>
+            <p className="text-gray-700 text-sm md:text-base">+8801830226281</p>
           </div>
           <div className="flex items-center space-x-3">
             <FaEnvelope className="text-[#ED1C25]" />
@@ -45,14 +45,14 @@ const Footer = () => {
         <div className="w-full md:w-1/3">
           <h2 className="text-[#016DB8] text-xl font-semibold mb-4">Quick Link</h2>
           <ul className="text-black font-semibold space-y-2 text-sm md:text-base">
-            <li className="cursor-pointer hover:text-[#016DB8]">Home</li>
-            <li className="cursor-pointer hover:text-[#016DB8]">About Us</li>
+            <li className="cursor-pointer hover:text-[#016DB8] transition-colors duration-200">Home</li>
+            <li className="cursor-pointer hover:text-[#016DB8] transition-colors duration-200">About Us</li>
 
-            {/* Products with arrow on right */}
+            {/* Products with dropdown */}
             <li className="relative">
               <button
                 onClick={() => setShowDropdown(!showDropdown)}
-                className="w-full flex items-center justify-between hover:text-[#016DB8] focus:outline-none"
+                className="w-full flex items-center justify-between hover:text-[#016DB8] focus:outline-none transition-colors duration-200"
                 aria-expanded={showDropdown}
               >
                 <span>Products</span>
@@ -71,14 +71,16 @@ const Footer = () => {
                 </svg>
               </button>
               {showDropdown && (
-                <ul className="mt-2 ml-4 pl-2 border-l border-gray-300 space-y-1">
-                  <li className="cursor-pointer hover:text-[#016DB8]">Garments Accessories</li>
+                <ul className="mt-2 ml-4 pl-4 border-l border-gray-300 space-y-1">
+                  <li className="cursor-pointer hover:text-[#016DB8] transition-colors duration-200">
+                    Garments Accessories
+                  </li>
                 </ul>
               )}
             </li>
 
-            <li className="cursor-pointer hover:text-[#016DB8]">Gallery</li>
-            <li className="cursor-pointer hover:text-[#016DB8]">Contact Us</li>
+            <li className="cursor-pointer hover:text-[#016DB8] transition-colors duration-200">Gallery</li>
+            <li className="cursor-pointer hover:text-[#016DB8] transition-colors duration-200">Contact Us</li>
           </ul>
         </div>
 
@@ -88,14 +90,14 @@ const Footer = () => {
           <div className="flex space-x-4">
             <a
               href="#"
-              className="bg-[#1877F2] rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-blue-800"
+              className="bg-[#1877F2] rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-blue-800 transition-colors duration-200"
               aria-label="Facebook"
             >
               <FaFacebookF />
             </a>
             <a
               href="#"
-              className="bg-[#1DA1F2] rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-sky-600"
+              className="bg-[#1DA1F2] rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-sky-600 transition-colors duration-200"
               aria-label="Twitter"
             >
               <FaTwitter />
@@ -104,7 +106,7 @@ const Footer = () => {
               href="https://wa.me/8801830226281"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-green-600"
+              className="bg-[#25D366] rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-green-600 transition-colors duration-200"
               aria-label="WhatsApp"
             >
               <FaWhatsapp />
