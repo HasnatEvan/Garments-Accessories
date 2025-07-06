@@ -2,6 +2,7 @@
 import ContactFrom from "../Contact/ContactFrom";
 import HeroSection from "./HeroSection";
 import MarqueeText from "./MarqueeText";
+import NumberTicker from "./NumberTicker";
 import Section1 from "./Section1";
 import Section2 from "./Section2";
 import Section3 from "./Section3";
@@ -13,11 +14,12 @@ const Home = () => {
         <div>
             <HeroSection></HeroSection>
             {/* <MarqueeText></MarqueeText> */}
-            <Section1></Section1>
             <Slider></Slider>
+            <Section1></Section1>
             <Section2></Section2>
             <Section3></Section3>
             <Section4></Section4>
+            <NumberTicker></NumberTicker>
             <ContactFrom></ContactFrom>
             
         </div>

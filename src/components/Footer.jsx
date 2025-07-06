@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   FaHome,
   FaPhoneAlt,
@@ -7,11 +7,10 @@ import {
   FaTwitter,
   FaWhatsapp
 } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/Logo/Logo.png';
 
 const Footer = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
-
   return (
     <footer className="bg-white text-black pt-8 pb-6 px-6 md:px-16 border-t border-gray-200">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
@@ -45,42 +44,56 @@ const Footer = () => {
         <div className="w-full md:w-1/3">
           <h2 className="text-[#016DB8] text-xl font-semibold mb-4">Quick Link</h2>
           <ul className="text-black font-semibold space-y-2 text-sm md:text-base">
-            <li className="cursor-pointer hover:text-[#016DB8] transition-colors duration-200">Home</li>
-            <li className="cursor-pointer hover:text-[#016DB8] transition-colors duration-200">About Us</li>
-
-            {/* Products with dropdown */}
-            <li className="relative">
-              <button
-                onClick={() => setShowDropdown(!showDropdown)}
-                className="w-full flex items-center justify-between hover:text-[#016DB8] focus:outline-none transition-colors duration-200"
-                aria-expanded={showDropdown}
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `cursor-pointer transition-colors duration-200 ${isActive ? 'text-[#016DB8]' : 'hover:text-[#016DB8]'}`
+                }
               >
-                <span>Products</span>
-                <svg
-                  className={`w-4 h-4 ml-2 transition-transform duration-200 ${showDropdown ? 'rotate-180' : ''
-                    }`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.23 8.29a.75.75 0 01.02-1.08z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-              {showDropdown && (
-                <ul className="mt-2 ml-4 pl-4 border-l border-gray-300 space-y-1">
-                  <li className="cursor-pointer hover:text-[#016DB8] transition-colors duration-200">
-                    Garments Accessories
-                  </li>
-                </ul>
-              )}
+                Home
+              </NavLink>
             </li>
-
-            <li className="cursor-pointer hover:text-[#016DB8] transition-colors duration-200">Gallery</li>
-            <li className="cursor-pointer hover:text-[#016DB8] transition-colors duration-200">Contact Us</li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `cursor-pointer transition-colors duration-200 ${isActive ? 'text-[#016DB8]' : 'hover:text-[#016DB8]'}`
+                }
+              >
+                About Us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/products"
+                className={({ isActive }) =>
+                  `cursor-pointer transition-colors duration-200 ${isActive ? 'text-[#016DB8]' : 'hover:text-[#016DB8]'}`
+                }
+              >
+                Product
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/gallery"
+                className={({ isActive }) =>
+                  `cursor-pointer transition-colors duration-200 ${isActive ? 'text-[#016DB8]' : 'hover:text-[#016DB8]'}`
+                }
+              >
+                Gallery
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `cursor-pointer transition-colors duration-200 ${isActive ? 'text-[#016DB8]' : 'hover:text-[#016DB8]'}`
+                }
+              >
+                Contact Us
+              </NavLink>
+            </li>
           </ul>
         </div>
 
@@ -113,16 +126,15 @@ const Footer = () => {
             </a>
           </div>
         </div>
-
       </div>
 
       {/* Copyright */}
       <div className="mt-16 text-gray-600 text-center text-xs md:text-sm border-t border-gray-300 pt-4">
-        Copyright © 2024 <strong>Front Line Bd.</strong> All Rights Reserved.
+        Copyright © 2025 <strong>Front Line Bd.</strong> All Rights Reserved.
       </div>
 
       {/* Developer credit */}
-      <div className="text-gray-500 text-center text-xs mt-2 ">
+      <div className="text-gray-500 text-center text-xs mt-2">
         Developed by{' '}
         <a
           href="https://stalwart-pavlova-9b7a27.netlify.app/"

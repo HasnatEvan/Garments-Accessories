@@ -40,12 +40,7 @@ const breakpointColumnsObj = {
 const Section1 = () => {
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-20 bg-white">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#016DB8] inline-block border-b-4 border-[#016DB8] pb-2">
-          Photo Gallery
-        </h2>
-      </div>
-
+    
 
       <Masonry
         breakpointCols={breakpointColumnsObj}

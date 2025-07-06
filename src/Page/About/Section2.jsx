@@ -27,11 +27,8 @@ const people = [
 const Section2 = () => {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-20 ">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#016DB8] inline-block border-b-4 border-[#016DB8] pb-2">
-          Our Team
-        </h2>
-      </div>
+ 
+
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
         {people.map((person, index) => (
@@ -55,7 +52,7 @@ const Section2 = () => {
             </div>
 
             <div className="flex-1 text-center sm:text-left">
-              <h3 className="text-xl font-bold text-[#016DB8] flex items-center justify-center sm:justify-start gap-2">
+              <h3 className="text-xl font-bold text-[#003366] flex items-center justify-center sm:justify-start gap-2">
                 <FiUser /> {person.name}
               </h3>
               <p className="text-gray-700 flex items-center justify-center sm:justify-start gap-2 mt-2">

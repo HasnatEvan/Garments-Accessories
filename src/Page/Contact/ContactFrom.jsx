@@ -52,7 +52,7 @@ const ContactFrom = () => {
     <div className="flex flex-col md:flex-row justify-between gap-10 px-4 sm:px-6 lg:px-20 py-10 sm:py-14 md:py-20 bg-gray-50 text-black">
       {/* Left: Contact Info */}
       <div className="w-full md:w-1/2 space-y-6">
-        <h4 className="text-[#016DB8] font-semibold uppercase tracking-widest w-fit border-b-2 border-[#016DB8] pb-1 text-sm sm:text-base">
+        <h4 className="text-[#003366] font-semibold uppercase tracking-widest w-fit border-b-2 text-[#003366] pb-1 text-sm sm:text-base">
           Get In Touch
         </h4>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Contact Us</h2>

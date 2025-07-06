@@ -120,11 +120,6 @@ const Section1 = () => {
 
   return (
     <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-6">
-      {/* Header */}
-      <h1 className="text-3xl md:text-4xl font-bold text-[#016DB8] mb-8 text-center">
-        Garments Accessories
-      </h1>
-
       <div className="flex flex-col md:flex-row gap-6">
         {/* Sidebar */}
         <div className="md:w-1/4 w-full">

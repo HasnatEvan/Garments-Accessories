@@ -21,7 +21,6 @@ import image10 from '../../assets/Home_Page/slider/SatinTape1.jpg';
 import image11 from '../../assets/Home_Page/slider/Sticker3.jpg';
 import image12 from '../../assets/Home_Page/slider/TissuePaper1.jpg';
 import image13 from '../../assets/Home_Page/slider/TwillTape3.jpg';
-import BackgroundImage from '../../assets/Home_Page/slider/bg.jpg';
 
 const images = [
   { src: image14, name: 'Metal Item' },
@@ -46,30 +45,18 @@ const images = [
 
 const Slider = () => {
   return (
-    <div className="relative w-full py-6 px-4 sm:px-6 md:px-12">
-      {/* Blurred Background */}
-      <div
-        className="absolute inset-0 -z-10 bg-center bg-cover"
-        style={{
-          backgroundImage: `url(${BackgroundImage})`,
-          filter: 'blur(10px)',
-          backgroundColor: 'rgba(0, 0, 0, 0.4)',
-          backgroundBlendMode: 'darken',
-        }}
-      />
-
-      {/* Main Slider */}
+    <div className="relative w-full bg-white py-2 ">
       <Swiper
         modules={[Autoplay]}
         autoplay={{
           delay: 2000,
           disableOnInteraction: false,
         }}
-        speed={1000}
+        speed={800} // smoother speed
         loop={true}
-        spaceBetween={20}
+        spaceBetween={10}
         grabCursor={true}
-        slidesPerView={1.5}
+        slidesPerView={2}
         breakpoints={{
           480: { slidesPerView: 2 },
           640: { slidesPerView: 2.5 },
@@ -83,16 +70,21 @@ const Slider = () => {
         {images.map(({ src, name }, index) => (
           <SwiperSlide key={index}>
             <div
-              className="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
-              style={{ boxShadow: '0 0 15px rgba(0, 0, 0, 0.8)' }}
+              className="relative overflow-hidden rounded-md transition-transform duration-300 hover:scale-[1.02]"
+              style={{
+                boxShadow: '0 1px 5px rgba(0,0,0,0.1)',
+                willChange: 'transform',
+                backfaceVisibility: 'hidden',
+              }}
             >
               <img
                 src={src}
                 alt={name}
                 className="w-full h-48 object-cover"
-                loading="lazy"
+                loading="lazy" // lazy load to reduce lag
+                decoding="async" // improve paint performance
               />
-              <div className="absolute bottom-0 w-full bg-black bg-opacity-60 text-white text-center py-2 text-sm font-semibold">
+              <div className="absolute bottom-0 w-full bg-black bg-opacity-50 text-white text-center py-2 text-sm font-medium">
                 {name}
               </div>
             </div>

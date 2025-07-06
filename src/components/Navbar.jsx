@@ -1,7 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
-  FiClock, FiPhoneCall, FiMapPin, FiHome, FiInfo, FiPhone, FiMenu, FiX, FiImage, FiBox,
+  FiClock,
+  FiPhoneCall,
+  FiMapPin,
+  FiHome,
+  FiInfo,
+  FiPhone,
+  FiMenu,
+  FiX,
+  FiImage,
+  FiBox,
 } from 'react-icons/fi';
 import { MdOutlineMail } from 'react-icons/md';
 import { FaFacebookF, FaTwitter, FaWhatsapp } from 'react-icons/fa';
@@ -23,7 +32,6 @@ const Navbar = () => {
         setIsMobileMenuOpen(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
@@ -66,7 +74,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Middle Header (Hidden on mobile) */}
+      {/* Middle Header */}
       <div className="hidden md:flex flex-col md:flex-row justify-between items-center bg-white px-4 md:px-16 py-6">
         <div className="flex items-center space-x-3">
           <img src={logo} alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
@@ -102,7 +110,7 @@ const Navbar = () => {
 
       {/* Bottom Navbar */}
       <nav className="sticky top-0 z-50 bg-[#016DB8]/95 text-white px-4 md:px-16 py-2 lg:py-6 backdrop-blur-md">
-        {/* Logo and Brand Name for mobile only */}
+        {/* Mobile Header Logo */}
         <div className="flex md:hidden items-center justify-between mb-2">
           <div className="flex items-center gap-2">
             <img src={logo} alt="Logo" className="w-8 h-8 object-contain" />
@@ -112,7 +120,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Toggle Button */}
+        {/* Mobile Menu Toggle */}
         <button
           onClick={toggleMobileMenu}
           className="menu-toggle absolute right-4 top-3 md:hidden text-white text-3xl z-30"
@@ -132,36 +140,66 @@ const Navbar = () => {
         >
           <NavLink
             to="/"
-            exact="true"
-            className="flex items-center gap-1 py-2 md:py-0 px-4 hover:text-[#ED1C25]"
+            end
+            className={({ isActive }) =>
+              `flex items-center gap-1 py-2 md:py-0 px-4 transition-colors duration-200 ${
+                isActive
+                  ? 'text-black font-bold underline'
+                  : 'hover:text-black'
+              }`
+            }
           >
             <FiHome /> Home
           </NavLink>
 
           <NavLink
             to="/about"
-            className="flex items-center gap-1 py-2 md:py-0 px-4 hover:text-[#ED1C25]"
+            className={({ isActive }) =>
+              `flex items-center gap-1 py-2 md:py-0 px-4 transition-colors duration-200 ${
+                isActive
+                  ? 'text-black font-bold underline'
+                  : 'hover:text-black'
+              }`
+            }
           >
             <FiInfo /> About Us
           </NavLink>
 
           <NavLink
             to="/products"
-            className="flex items-center gap-1 py-2 md:py-0 px-4 hover:text-[#ED1C25]"
+            className={({ isActive }) =>
+              `flex items-center gap-1 py-2 md:py-0 px-4 transition-colors duration-200 ${
+                isActive
+                  ? 'text-black font-bold underline'
+                  : 'hover:text-black'
+              }`
+            }
           >
             <FiBox /> Products
           </NavLink>
 
           <NavLink
             to="/gallery"
-            className="flex items-center gap-1 py-2 md:py-0 px-4 hover:text-[#ED1C25]"
+            className={({ isActive }) =>
+              `flex items-center gap-1 py-2 md:py-0 px-4 transition-colors duration-200 ${
+                isActive
+                  ? 'text-black font-bold underline'
+                  : 'hover:text-black'
+              }`
+            }
           >
             <FiImage /> Gallery
           </NavLink>
 
           <NavLink
             to="/contact"
-            className="flex items-center gap-1 py-2 md:py-0 px-4 hover:text-[#ED1C25]"
+            className={({ isActive }) =>
+              `flex items-center gap-1 py-2 md:py-0 px-4 transition-colors duration-200 ${
+                isActive
+                  ? 'text-black font-bold underline'
+                  : 'hover:text-black'
+              }`
+            }
           >
             <FiPhone /> Contact Us
           </NavLink>

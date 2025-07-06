@@ -46,9 +46,8 @@ const Section1 = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Content wrapper with padding and max width */}
       <div className="relative z-10">
-        <h1 className="text-center md:text-left text-xl sm:text-2xl md:text-4xl font-bold text-[#016DB8] mb-10 leading-tight">
+        <h1 className="text-left md:text-left text-[16px] sm:text-2xl md:text-4xl font-bold text-[#003366] mb-10 leading-tight">
           Welcome To Front Line BD - Garments Accessories <br />
           Manufacturer & Supplier In Bangladesh
         </h1>
@@ -64,7 +63,7 @@ const Section1 = () => {
             <img
               src={Image}
               alt="Office Team"
-              className="rounded-lg shadow-lg w-full h-auto object-cover max-h-[400px]"
+              className="rounded-lg shadow-lg w-full h-auto object-cover max-h-[250px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[500px]"
               loading="lazy"
             />
           </div>

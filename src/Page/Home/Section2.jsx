@@ -23,7 +23,7 @@ const Section2 = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#016DB8] mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#003366] mb-6">
             Why Choose Front Line BD?
           </h2>
           <ul className="space-y-4">

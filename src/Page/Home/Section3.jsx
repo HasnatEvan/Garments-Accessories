@@ -21,10 +21,10 @@ const Section3 = () => {
   ];
 
   return (
-    <section className="py-10 bg-gray-50">
+    <section className="py-10 bg-white">
       {/* Title */}
       <div className="text-center mb-4">
-        <h2 className="text-2xl sm:text-3xl font-bold text-[#016DB8] pb-2 border-b-4 border-[#016DB8] inline-block">
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#003366] pb-2">
           Our Vendors
         </h2>
         {/* Small Description */}

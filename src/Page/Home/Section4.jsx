@@ -68,8 +68,8 @@ const item = {
 
 const Section4 = () => {
   return (
-    <section className="py-12 px-4 sm:px-8 lg:px-16 bg-white">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#016DB8] text-center mb-10">
+    <section className="py-12 px-4 sm:px-8 lg:px-16 bg-gray-50">
+      <h2 className="text-3xl md:text-4xl font-bold text-[#003366] text-center mb-10">
         Our Certifications
       </h2>
 
@@ -77,25 +77,27 @@ const Section4 = () => {
         variants={container}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.2 }} // <-- triggers animation every time in view
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 items-stretch"
+        viewport={{ once: false, amount: 0.2 }}
+        className="flex flex-wrap justify-center gap-6"
       >
         {certificates.map((cert, index) => (
           <motion.div
             key={index}
             variants={item}
-            className="bg-white rounded-lg shadow-md border border-gray-200 p-6 flex flex-col justify-between h-full text-center hover:shadow-xl transition-all"
+            className="bg-white rounded-lg shadow-md border border-gray-200 p-6 flex flex-col justify-between text-center hover:shadow-xl transition-all w-full sm:w-[45%] lg:w-[30%] min-h-[320px]"
           >
             <div className="flex flex-col items-center">
               <img
                 src={cert.logo}
                 alt={cert.title}
-                className="w-20 h-20 object-contain mb-4"
+                className="w-16 h-16 object-contain mb-4"
               />
-              <h3 className="text-xl font-semibold text-[#003366] mb-3">
+              <h3 className="text-lg font-semibold text-[#003366] mb-2">
                 {cert.title}
               </h3>
-              <p className="text-sm text-gray-600 mb-6">{cert.description}</p>
+              <p className="text-sm text-gray-600 mb-4">
+                {cert.description}
+              </p>
             </div>
             <a
               href={cert.file}
