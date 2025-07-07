@@ -32,7 +32,10 @@ const Footer = () => {
           </div>
           <div className="flex items-center space-x-3">
             <FaPhoneAlt className="text-[#ED1C25]" />
-            <p className="text-gray-700 text-sm md:text-base">+8801830226281</p>
+            <div className="text-gray-700 text-sm md:text-base">
+              <p>+8801830226281</p>
+              <p>+8801815814145</p> {/* ✅ নতুন নাম্বার যুক্ত */}
+            </div>
           </div>
           <div className="flex items-center space-x-3">
             <FaEnvelope className="text-[#ED1C25]" />

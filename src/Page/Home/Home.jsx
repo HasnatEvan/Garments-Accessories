@@ -11,7 +11,7 @@ import Slider from "./Slider";
 
 const Home = () => {
     return (
-        <div>
+        <div className="max-w-screen-xl mx-auto ">
             <HeroSection></HeroSection>
             {/* <MarqueeText></MarqueeText> */}
             <Slider></Slider>

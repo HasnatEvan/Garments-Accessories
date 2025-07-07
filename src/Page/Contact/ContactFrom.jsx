@@ -52,7 +52,7 @@ const ContactFrom = () => {
     <div className="flex flex-col md:flex-row justify-between gap-10 px-4 sm:px-6 lg:px-20 py-10 sm:py-14 md:py-20 bg-gray-50 text-black">
       {/* Left: Contact Info */}
       <div className="w-full md:w-1/2 space-y-6">
-        <h4 className="text-[#003366] font-semibold uppercase tracking-widest w-fit border-b-2 text-[#003366] pb-1 text-sm sm:text-base">
+        <h4 className="text-[#003366] font-semibold uppercase tracking-widest w-fit border-b-2 pb-1 text-sm sm:text-base">
           Get In Touch
         </h4>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Contact Us</h2>
@@ -70,12 +70,13 @@ const ContactFrom = () => {
           </div>
         </div>
 
-        {/* Phone */}
+        {/* Phone Numbers */}
         <div className="flex items-center gap-4">
           <FaPhoneAlt className="text-[#ED1C25] text-lg sm:text-xl" />
           <div>
             <h5 className="font-semibold">Phone</h5>
             <p className="text-gray-600 text-sm">+8801830226281</p>
+            <p className="text-gray-600 text-sm">+8801815814145</p> {/* New number added */}
           </div>
         </div>
 
@@ -116,7 +117,7 @@ const ContactFrom = () => {
         </div>
       </div>
 
-      {/* Right: Form */}
+      {/* Right: Contact Form */}
       <div className="w-full md:w-1/2 bg-white p-6 sm:p-8 rounded-md shadow-md">
         <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-center">Fill Up The Form</h2>
         <p className="text-gray-500 text-sm mb-6 text-center">
@@ -169,7 +170,7 @@ const ContactFrom = () => {
             />
           </div>
 
-          {/* Button */}
+          {/* Submit Button */}
           <div className="flex justify-center">
             <button
               type="submit"

@@ -5,7 +5,7 @@ import HeroSection from "./HeroSection";
 
 const Contact = () => {
     return (
-        <div>
+        <div className="max-w-screen-xl mx-auto ">
             <HeroSection></HeroSection>
             <MarqueeText></MarqueeText>
             <ContactFrom></ContactFrom>

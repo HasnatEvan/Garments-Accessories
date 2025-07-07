@@ -5,7 +5,7 @@ import ContactIcon from "../components/ContactIcon";
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="max-w-screen-xl mx-auto">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <ContactIcon></ContactIcon>

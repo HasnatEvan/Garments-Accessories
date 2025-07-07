@@ -103,6 +103,7 @@ const Navbar = () => {
             <div>
               <p className="font-semibold">Hotline</p>
               <p>+8801830226281</p>
+              <p>+8801815814145</p> {/* ✅ Newly added number */}
             </div>
           </div>
         </div>

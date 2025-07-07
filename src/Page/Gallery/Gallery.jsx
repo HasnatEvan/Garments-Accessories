@@ -4,7 +4,7 @@ import Section1 from "./Section1";
 
 const Gallery = () => {
     return (
-        <div>
+        <div className="max-w-screen-xl mx-auto ">
             <GalleryHeroSection></GalleryHeroSection>
             <MarqueeText></MarqueeText>
             <Section1></Section1>
