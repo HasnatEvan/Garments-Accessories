@@ -29,37 +29,39 @@ const images = [
   image15, image16, image17, image18, image19, image20, image21,
 ];
 
-// Masonry breakpoint configuration (responsive)
+// Responsive column settings
 const breakpointColumnsObj = {
-  default: 4,
-  1280: 3,
-  768: 2,
-  480: 1,
+  default: 4,   // PC
+  1280: 3,      // Laptop
+  768: 2,       // Tablet
+  480: 2,       // Mobile এও 2 কলাম রাখলাম
 };
 
 const Section1 = () => {
   return (
     <section className="py-12 px-4 sm:px-6 lg:px-20 bg-white">
-    
-
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="flex -ml-4 w-auto"
         columnClassName="pl-4 bg-clip-padding"
       >
-        {images.map((img, index) => (
-          <div
-            key={index}
-            className="mb-6 overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-          >
-            <img
-              src={img}
-              alt={`Gallery ${index + 1}`}
-              className="w-full object-cover  transform transition-transform duration-500 hover:scale-105 hover:brightness-110"
-              loading="lazy"
-            />
-          </div>
-        ))}
+        {images.map((img, index) => {
+          const isLast = index === images.length - 1;
+          return (
+            <div
+              key={index}
+              className={`mb-6 overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer 
+                ${isLast ? 'mx-auto' : ''} sm:mx-0`}
+            >
+              <img
+                src={img}
+                alt={`Gallery ${index + 1}`}
+                className="w-full object-cover transform transition-transform duration-500 hover:scale-105 hover:brightness-110"
+                loading="lazy"
+              />
+            </div>
+          );
+        })}
       </Masonry>
     </section>
   );

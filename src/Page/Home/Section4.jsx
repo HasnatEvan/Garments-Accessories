@@ -103,7 +103,7 @@ const Section4 = () => {
               href={cert.file}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-black text-white text-sm px-4 py-2 rounded hover:bg-gray-800 transition-all mt-auto"
+              className="bg-[#016DB8] text-white text-sm px-4 py-2 rounded hover:bg-[#114f7c] transition-all mt-auto"
             >
               VIEW CERTIFICATE
             </a>

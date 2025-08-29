@@ -47,7 +47,7 @@ const Section2 = () => {
               <img
                 src={person.image}
                 alt={person.name}
-                className="w-full h-full object-cover rounded shadow-md"
+                className="w-full h-full object-cover rounded"
               />
             </div>
 

@@ -1,5 +1,4 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -12,7 +11,6 @@ import image4 from "../../assets/Home_Page/Banner/image4.jpg";
 import image5 from "../../assets/Home_Page/Banner/image5.jpg";
 
 const HeroSection = () => {
-  const navigate = useNavigate();
 
   const slides = [
     {
@@ -66,20 +64,21 @@ const HeroSection = () => {
                 alt={`Slide ${index + 1}`}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-white text-center px-4">
-                <h2 className="text-xl sm:text-2xl md:text-4xl font-bold drop-shadow-md mb-3">
+              <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-white text-center px-2 sm:px-4">
+                <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold drop-shadow-md mb-2 sm:mb-3 leading-snug">
                   {slide.title}
                 </h2>
-                <p className="text-sm sm:text-base md:text-lg max-w-3xl drop-shadow-md leading-relaxed mb-4">
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl drop-shadow-md leading-relaxed mb-3 sm:mb-4">
                   {slide.description}
                 </p>
-                <button
-                  onClick={() => navigate("/products")}
-                  className="bg-white text-black font-semibold px-5 py-2 rounded-md hover:bg-gray-200 transition-all duration-300"
+                <Link
+                  to="/products"
+                  className="bg-[#016DB8] text-white font-medium text-xs sm:text-sm md:text-base px-4 sm:px-5 py-1.5 sm:py-2 rounded-md hover:bg-gray-200 transition-all duration-300"
                 >
                   {slide.buttonText}
-                </button>
+                </Link>
               </div>
+
             </div>
           </SwiperSlide>
         ))}

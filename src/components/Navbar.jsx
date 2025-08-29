@@ -47,7 +47,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="text-black">
+    <div className="text-black ">
       {/* Top Header */}
       <div className="bg-gray-100 text-sm flex flex-col md:flex-row justify-between items-center px-4 md:px-16 py-2 space-y-1 md:space-y-0">
         <div className="flex items-center space-x-2">

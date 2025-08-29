@@ -14,7 +14,7 @@ const Home = () => {
         <div className="max-w-screen-xl mx-auto ">
             <HeroSection></HeroSection>
             {/* <MarqueeText></MarqueeText> */}
-            <Slider></Slider>
+            {/* <Slider></Slider> */}
             <Section1></Section1>
             <Section2></Section2>
             <Section3></Section3>

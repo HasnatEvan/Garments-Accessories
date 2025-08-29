@@ -29,7 +29,7 @@ const NumberTicker = () => {
     }, [scrollTriggered]);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6 md:px-20 py-12 bg-white min-h-screen">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6 md:px-20 py-12 bg-white ">
             {/* Text Content */}
             <div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#003366] mb-6">GET TO KNOW US</h2>
