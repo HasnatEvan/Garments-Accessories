@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import {
   FiClock,
   FiPhoneCall,
@@ -77,10 +77,16 @@ const Navbar = () => {
       {/* Middle Header */}
       <div className="hidden md:flex flex-col md:flex-row justify-between items-center bg-white px-4 md:px-16 py-6">
         <div className="flex items-center space-x-3">
-          <img src={logo} alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain" />
-          <h1 className="text-2xl md:text-3xl font-extrabold text-[#016DB8]">
-            <span className="text-[#ED1C25]">Front Line</span> BD
-          </h1>
+          <Link to="/" className="flex items-center space-x-2">
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-10 h-10 md:w-12 md:h-12 object-contain"
+            />
+            <h1 className="text-2xl md:text-3xl font-extrabold text-[#016DB8]">
+              <span className="text-[#ED1C25]">Front Line</span> BD
+            </h1>
+          </Link>
         </div>
 
         <div className="flex gap-6 mt-4 md:mt-0 text-sm">
@@ -103,7 +109,7 @@ const Navbar = () => {
             <div>
               <p className="font-semibold">Hotline</p>
               <p>+8801830226281</p>
-              <p>+8801815814145</p> {/* ✅ Newly added number */}
+              <p>+8801815814145</p>
             </div>
           </div>
         </div>
@@ -113,12 +119,12 @@ const Navbar = () => {
       <nav className="sticky top-0 z-50 bg-[#016DB8]/95 text-white px-4 md:px-16 py-2 lg:py-6 backdrop-blur-md">
         {/* Mobile Header Logo */}
         <div className="flex md:hidden items-center justify-between mb-2">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="Logo" className="w-8 h-8 object-contain" />
             <h1 className="text-lg font-bold text-white">
               <span className="text-[#ED1C25]">Front Line</span> BD
             </h1>
-          </div>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}

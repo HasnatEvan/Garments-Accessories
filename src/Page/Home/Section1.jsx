@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from '../../assets/Home_Page/Image_1.jpg';
 
 const Section1 = () => {
@@ -19,19 +18,20 @@ const Section1 = () => {
           Manufacturer & Supplier In Bangladesh
         </h1>
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+        <div className="flex flex-col md:flex-row items-stretch justify-between gap-8 md:gap-16">
           {/* Image Section */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 flex">
             <img
               src={Image}
               alt="Office Team"
-              className="rounded-lg shadow-lg w-full h-auto object-cover max-h-[250px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[500px]"
+              className="w-full h-80 sm:h-96 md:h-full lg:h-[540px] object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
 
+
           {/* Text Section */}
-          <div className="w-full md:w-1/2 text-black text-base sm:text-lg md:text-xl leading-relaxed md:leading-8 px-2 md:px-0 text-center md:text-left space-y-2">
+          <div className="w-full md:w-1/2 text-black text-base sm:text-lg md:text-xl leading-relaxed md:leading-8 px-2 md:px-0 text-left md:text-left space-y-2">
             {paragraphs.map((text, idx) => (
               <p key={idx}>{text}</p>
             ))}
