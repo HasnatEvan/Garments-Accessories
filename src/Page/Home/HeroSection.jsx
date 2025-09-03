@@ -10,12 +10,14 @@ const HeroSection = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000, // transition speed (increase for smoother effect)
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false, // arrow off
+    cssEase: "ease-in-out", // smooth animation effect
+    pauseOnHover: false, // hover করলে থামবে না
   };
 
   return (
@@ -28,7 +30,7 @@ const HeroSection = () => {
             className="w-full border-0 outline-none"
           />
         </div>
-          <div>
+        <div>
           <img
             src={image3}
             alt="Banner 3"
@@ -42,7 +44,6 @@ const HeroSection = () => {
             className="w-full border-0 outline-none"
           />
         </div>
-      
       </Slider>
     </div>
   );

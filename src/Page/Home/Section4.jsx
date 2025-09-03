@@ -68,7 +68,7 @@ const item = {
 
 const Section4 = () => {
   return (
-    <section className="py-12 px-4 sm:px-8 lg:px-16 bg-gray-50">
+    <section className="py-12 px-4 sm:px-8 lg:px-16 bg-white">
       <h2 className="text-3xl md:text-4xl font-bold text-[#003366] text-center mb-10">
         Our Certifications
       </h2>

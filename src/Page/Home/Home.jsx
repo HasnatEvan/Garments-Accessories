@@ -17,9 +17,9 @@ const Home = () => {
             {/* <Slider></Slider> */}
             <Section1></Section1>
             <Section2></Section2>
-            <Section3></Section3>
             <Section4></Section4>
             <NumberTicker></NumberTicker>
+            <Section3></Section3>
             <ContactFrom></ContactFrom>
             
         </div>
