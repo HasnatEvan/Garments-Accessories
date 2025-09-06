@@ -1,6 +1,7 @@
 
 import MarqueeText from "../Home/MarqueeText";
 import AboutHeroSection from "./AboutHeroSection";
+import NewSection from "./NewSection";
 import Section1 from "./Section1";
 import Section2 from "./Section2";
 
@@ -10,6 +11,7 @@ const About = () => {
         <div className="max-w-screen-xl mx-auto ">
             <AboutHeroSection></AboutHeroSection>
             <MarqueeText></MarqueeText>
+            <NewSection></NewSection>
             <Section1></Section1>
             <Section2></Section2>
 

@@ -1,6 +1,7 @@
 
 import ContactFrom from "../Contact/ContactFrom";
 import HeroSection from "./HeroSection";
+import KeyFact from "./KeyFact";
 import MarqueeText from "./MarqueeText";
 import NumberTicker from "./NumberTicker";
 import Section1 from "./Section1";
@@ -16,6 +17,7 @@ const Home = () => {
             {/* <MarqueeText></MarqueeText> */}
             {/* <Slider></Slider> */}
             <Section1></Section1>
+            <KeyFact></KeyFact>
             <Section2></Section2>
             <Section4></Section4>
             <NumberTicker></NumberTicker>

@@ -10,28 +10,27 @@ const Section1 = () => {
   ];
 
   return (
-    <div className="relative px-4 sm:px-18 py-12 max-w-7xl mx-auto bg-white">
+    <div className="relative px-4 sm:px-10 md:px-20 py-12 max-w-7xl mx-auto bg-white">
       <div className="relative z-10">
         {/* Heading */}
-        <h1 className="text-left text-[16px] sm:text-2xl md:text-4xl font-bold text-[#003366] mb-10 leading-tight">
+        <h1 className="text-left text-[18px] sm:text-2xl md:text-4xl font-bold text-[#003366] mb-8 sm:mb-10 leading-tight">
           Welcome To Front Line BD - Garments Accessories <br />
           Manufacturer & Supplier In Bangladesh
         </h1>
 
-        <div className="flex flex-col md:flex-row items-stretch justify-between gap-8 md:gap-16">
+        <div className="flex flex-col md:flex-row items-start md:items-stretch justify-between gap-8 md:gap-16">
           {/* Image Section */}
-          <div className="w-full md:w-1/2 flex">
+          <div className="w-full md:w-1/2 flex justify-center md:justify-start">
             <img
               src={Image}
               alt="Office Team"
-              className="w-full h-80 sm:h-96 md:h-full lg:h-[540px] object-cover rounded-lg shadow-lg"
+              className="w-full h-64 sm:h-80 md:h-full lg:h-[600px] object-cover rounded-lg shadow-lg"
               loading="lazy"
             />
           </div>
 
-
           {/* Text Section */}
-          <div className="w-full md:w-1/2 text-black text-base sm:text-lg md:text-xl leading-relaxed md:leading-8 px-2 md:px-0 text-left md:text-left space-y-2">
+          <div className="w-full md:w-1/2 text-black text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed md:leading-8 px-0 md:px-0 space-y-4">
             {paragraphs.map((text, idx) => (
               <p key={idx}>{text}</p>
             ))}
