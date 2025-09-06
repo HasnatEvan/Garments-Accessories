@@ -3,10 +3,10 @@ import image from "../../assets/KeyFact/image01.jpg";
 
 const KeyFact = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 px-3 sm:px-10 md:px-16 lg:px-20">
+        <div className="grid grid-cols-1 md:grid-cols-12 px-3 sm:px-10 md:px-16 lg:px-20 ">
 
             {/* Left Side Image + Title */}
-            <div className="relative flex items-center justify-center bg-white">
+            <div className="relative flex items-center justify-center bg-white md:col-span-5">
                 <img
                     src={image}
                     alt="Key Facts"
@@ -21,9 +21,8 @@ const KeyFact = () => {
                 </div>
             </div>
 
-
             {/* Right Side Facts */}
-            <div className="bg-[#003366] text-white p-6 sm:p-10 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+            <div className="bg-[#003366] text-white p-6 sm:p-10 md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                 {/* Box 1 */}
                 <div className="text-center flex flex-col items-center">
                     <FaLightbulb className="text-3xl sm:text-4xl md:text-5xl mb-3" />
