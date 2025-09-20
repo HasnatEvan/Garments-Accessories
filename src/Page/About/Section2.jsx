@@ -26,10 +26,7 @@ const people = [
 
 const Section2 = () => {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-20 ">
- 
-
-
+    <section className="py-12 px-4 sm:px-8 lg:px-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
         {people.map((person, index) => (
           <div

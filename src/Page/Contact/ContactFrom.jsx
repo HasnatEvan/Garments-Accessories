@@ -49,7 +49,7 @@ const ContactFrom = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-between gap-10 px-4 sm:px-6 lg:px-20 py-10 sm:py-14 md:py-20 bg-gray-50 text-black">
+    <div className="flex flex-col md:flex-row justify-between gap-10 px-4 sm:px-8 lg:px-16 py-12 bg-gray-50 text-black">
       {/* Left: Contact Info */}
       <div className="w-full md:w-1/2 space-y-6">
         <h4 className="text-[#003366] font-semibold uppercase tracking-widest w-fit border-b-2 pb-1 text-sm sm:text-base">
@@ -76,7 +76,7 @@ const ContactFrom = () => {
           <div>
             <h5 className="font-semibold">Phone</h5>
             <p className="text-gray-600 text-sm">+8801830226281</p>
-            <p className="text-gray-600 text-sm">+8801815814145</p> {/* New number added */}
+            <p className="text-gray-600 text-sm">+8801815814145</p>
           </div>
         </div>
 

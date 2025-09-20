@@ -4,7 +4,7 @@ import TopHeader from "./TopHeader";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="w-full"> 
       <TopHeader />
       <MiddleHeader />
       <BottomNavbar />

@@ -2,22 +2,22 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import image1 from "../../assets/Home_Page/Banner/image02 - Copy.jpg";
-import image2 from "../../assets/Home_Page/Banner/image03 - Copy.jpg";
-import image3 from "../../assets/Home_Page/Banner/image04 - Copy.jpg";
+import image1 from "../../assets/Home_Page/Banner/image02 - Copy.png";
+import image2 from "../../assets/Home_Page/Banner/image03 - Copy.png";
+import image3 from "../../assets/Home_Page/Banner/image04 - Copy.png";
 
 const HeroSection = () => {
   const settings = {
-    dots: true,
+    dots: false, // hide pagination dots
     infinite: true,
-    speed: 1000, // transition speed (increase for smoother effect)
+    speed: 1000, // transition speed
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: false, // arrow off
-    cssEase: "ease-in-out", // smooth animation effect
-    pauseOnHover: false, // hover করলে থামবে না
+    arrows: false, // hide arrows
+    cssEase: "ease-in-out",
+    pauseOnHover: false,
   };
 
   return (

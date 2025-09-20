@@ -8,9 +8,9 @@ import Section2 from "./Section2";
 
 const About = () => {
     return (
-        <div className="max-w-screen-xl mx-auto ">
+        <div className="max-w-[1600px] mx-auto">
             <AboutHeroSection></AboutHeroSection>
-            <MarqueeText></MarqueeText>
+            {/* <MarqueeText></MarqueeText> */}
             <NewSection></NewSection>
             <Section1></Section1>
             <Section2></Section2>

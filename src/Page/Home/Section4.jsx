@@ -18,35 +18,35 @@ const certificates = [
     logo: CcicLogo,
     title: 'CCIC CERTIFIED',
     description:
-      'Front Line BD is a proud member of the Chittagong Chamber of Commerce & Industry (CCCI), an esteemed industry-led organization established in 1959 representing the business and corporate sectors of Chittagong, Bangladesh. This certification reflects our commitment to upholding the highest standards of business ethics and industry excellence.',
+      'Front Line BD is a proud member of the Chittagong Chamber of Commerce & Industry (CCCI), an esteemed industry-led organization established in 1959 representing the business and corporate sectors of Chittagong, Bangladesh. This certification reflects our commitment to upholding the highest standards of business ethics and industry excellence. By being a CCIC member, we actively participate in trade development, policy discussions, and contribute to the overall growth of the national economy, while also building trust and credibility among our clients and partners.',
     file: CcicCertificate,
   },
   {
     logo: ErcLogo,
     title: 'ERC CERTIFIED',
     description:
-      'Front Line BD holds the Export Registration Certificate (ERC), authorized by the Ministry of Commerce of Bangladesh. This certification authorizes our company to participate in international trade and export activities, ensuring compliance with all governmental export regulations.',
+      'Front Line BD holds the Export Registration Certificate (ERC), authorized by the Ministry of Commerce of Bangladesh. This certification authorizes our company to participate in international trade and export activities, ensuring compliance with all governmental export regulations. With the ERC, we are fully recognized as a legitimate exporter, enabling us to expand into global markets and deliver products beyond national boundaries while maintaining complete transparency and regulatory compliance.',
     file: ErcCertificate,
   },
   {
     logo: BINCertificationLogo,
     title: 'BIN CERTIFIED',
     description:
-      'Front Line BD is officially registered with a Business Identification Number (BIN) issued by the National Board of Revenue (NBR), which guarantees our tax compliance and legal operation within Bangladesh’s regulatory framework.',
+      'Front Line BD is officially registered with a Business Identification Number (BIN) issued by the National Board of Revenue (NBR), which guarantees our tax compliance and legal operation within Bangladesh’s regulatory framework. This certification not only ensures that our business practices are lawful but also strengthens our accountability to clients, partners, and government institutions. It is an essential recognition that positions our company as a responsible and trusted business entity.',
     file: BINCertificate,
   },
   {
     logo: TinCertificatLogo,
     title: 'TIN CERTIFIED',
     description:
-      'Front Line BD possesses a valid Taxpayer Identification Number (TIN) certificate from the National Board of Revenue (NBR), which authenticates our legal tax identity and enables us to fulfill tax obligations properly in Bangladesh.',
+      'Front Line BD possesses a valid Taxpayer Identification Number (TIN) certificate from the National Board of Revenue (NBR), which authenticates our legal tax identity and enables us to fulfill tax obligations properly in Bangladesh. This certificate highlights our responsibility as a compliant taxpayer, ensuring smooth operations with both national and international partners while strengthening our credibility in the business ecosystem.',
     file: TinCertificate,
   },
   {
     logo: TradeLicenceLogo,
     title: 'TRADE LICENCE CERTIFIED',
     description:
-      'Front Line BD holds a valid Trade Licence issued by the local government authority, confirming that our business operations are fully licensed and authorized within the jurisdiction, ensuring compliance with all business laws and regulations.',
+      'Front Line BD holds a valid Trade Licence issued by the local government authority, confirming that our business operations are fully licensed and authorized within the jurisdiction, ensuring compliance with all business laws and regulations. This certification further demonstrates our legitimacy, reliability, and dedication to conducting business responsibly, offering our customers and stakeholders peace of mind that they are engaging with a fully authorized and law-abiding company.',
     file: TradeLicenceCertificate,
   },
 ];
@@ -68,7 +68,7 @@ const item = {
 
 const Section4 = () => {
   return (
-    <section className="py-12 px-4 sm:px-8 lg:px-16 bg-white">
+    <section className="py-12 px-4 sm:px-8 lg:px-2 bg-white">
       <h2 className="text-3xl md:text-4xl font-bold text-[#003366] text-center mb-10">
         Our Certifications
       </h2>
@@ -84,7 +84,7 @@ const Section4 = () => {
           <motion.div
             key={index}
             variants={item}
-            className="bg-white rounded-lg shadow-md border border-gray-200 p-6 flex flex-col justify-between text-center hover:shadow-xl transition-all w-full sm:w-[45%] lg:w-[30%] min-h-[320px]"
+            className="bg-white rounded-lg shadow-md border border-[#016DB8] p-6 flex flex-col justify-between text-center hover:shadow-xl transition-all w-full sm:w-[45%] lg:w-[30%] min-h-[320px]"
           >
             <div className="flex flex-col items-center">
               <img
@@ -95,7 +95,7 @@ const Section4 = () => {
               <h3 className="text-lg font-semibold text-[#003366] mb-2">
                 {cert.title}
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-base md:text-lg text-gray-600 mb-4">
                 {cert.description}
               </p>
             </div>

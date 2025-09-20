@@ -12,16 +12,18 @@ import Section5 from "./Section5";
 
 const Home = () => {
     return (
-        <div >
+        <div className="max-w-[1600px] mx-auto">
+
             <HeroSection></HeroSection>
             <Section1></Section1>
             <KeyFact></KeyFact>
+            {/* <Section5></Section5> */}
             <Section2></Section2>
             <Section4></Section4>
-            <Section5></Section5>
             <NumberTicker></NumberTicker>
             <Section3></Section3>
             <ContactFrom></ContactFrom>
+
 
         </div>
     );

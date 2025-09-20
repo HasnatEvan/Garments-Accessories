@@ -5,9 +5,9 @@ import HeroSection from "./HeroSection";
 
 const Contact = () => {
     return (
-        <div className="max-w-screen-xl mx-auto ">
+        <div className="max-w-[1600px] mx-auto">
             <HeroSection></HeroSection>
-            <MarqueeText></MarqueeText>
+            {/* <MarqueeText></MarqueeText> */}
             <ContactFrom></ContactFrom>
             <GoogleMap></GoogleMap>
         </div>

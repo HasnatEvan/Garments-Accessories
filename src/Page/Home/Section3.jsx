@@ -1,4 +1,3 @@
-import React from 'react';
 import Marquee from 'react-fast-marquee';
 
 import image1 from '../../assets/Home_Page/Our Clients/Image1.jpeg';
@@ -21,9 +20,9 @@ const Section3 = () => {
   ];
 
   return (
-    <section className="py-10  bg-white">
+    <section className="py-12 px-4 sm:px-8 lg:px-20 bg-white">
       {/* Title */}
-      <div className="text-center mb-4">
+      <div className="text-center mb-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-[#003366] pb-2">
           Our Vendors
         </h2>

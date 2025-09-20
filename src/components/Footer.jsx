@@ -12,7 +12,7 @@ import logo from '../assets/Logo/Logo.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black pt-8 pb-6 px-6 md:px-16 border-t border-gray-200">
+    <footer className="bg-white text-black py-12 px-4 sm:px-8 lg:px-16 border-t border-gray-200">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
 
         {/* Left section */}
@@ -34,7 +34,7 @@ const Footer = () => {
             <FaPhoneAlt className="text-[#ED1C25]" />
             <div className="text-gray-700 text-sm md:text-base">
               <p>+8801830226281</p>
-              <p>+8801815814145</p> {/* ✅ নতুন নাম্বার যুক্ত */}
+              <p>+8801815814145</p>
             </div>
           </div>
           <div className="flex items-center space-x-3">
@@ -140,7 +140,7 @@ const Footer = () => {
       <div className="text-gray-500 text-center text-xs mt-2">
         Developed by{' '}
         <a
-          href="https://stalwart-pavlova-9b7a27.netlify.app/"
+          href="https://www.facebook.com/profile.php?id=61575431671174"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[#016DB8] hover:underline"

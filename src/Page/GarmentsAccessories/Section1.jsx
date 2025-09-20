@@ -158,20 +158,20 @@ const Section1 = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                 {images.map((img, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => openLightbox(img)}
-                    className="relative overflow-hidden rounded shadow-lg cursor-pointer group"
-                  >
-                    <img
-                      src={img}
-                      alt={`${categoryName} ${idx + 1}`}
-                      className="w-full h-48 object-cover transform group-hover:scale-105 transition duration-300 rounded"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#ED1C25] via-[#016DB8] to-transparent opacity-0 group-hover:opacity-90 flex items-end p-4 rounded transition-opacity duration-300">
-                   
-                    </div>
-                  </div>
+               <div
+  key={idx}
+  onClick={() => openLightbox(img)}
+  className="relative overflow-hidden rounded shadow-lg cursor-pointer"
+>
+  <img
+    src={img}
+    alt={`${categoryName} ${idx + 1}`}
+    className="w-full h-48 object-cover rounded"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-[#ED1C25] via-[#016DB8] to-transparent opacity-0 flex items-end p-4 rounded">
+  </div>
+</div>
+
                 ))}
               </div>
             </section>

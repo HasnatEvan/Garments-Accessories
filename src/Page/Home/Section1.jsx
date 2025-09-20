@@ -10,7 +10,7 @@ const Section1 = () => {
   ];
 
   return (
-    <div className="relative px-4 sm:px-10 md:px-20 py-12 max-w-7xl mx-auto bg-white">
+    <section className="px-4 sm:px-8 lg:px-16 py-12 bg-white">
       <div className="relative z-10">
         {/* Heading */}
         <h1 className="text-left text-[18px] sm:text-2xl md:text-4xl font-bold text-[#003366] mb-8 sm:mb-10 leading-tight">
@@ -24,20 +24,20 @@ const Section1 = () => {
             <img
               src={Image}
               alt="Office Team"
-              className="w-full h-64 sm:h-80 md:h-full lg:h-[600px] object-cover rounded-lg shadow-lg"
+              className="w-full h-64 sm:h-80 md:h-full lg:h-[600px] object-cover shadow-lg"
               loading="lazy"
             />
           </div>
 
           {/* Text Section */}
-          <div className="w-full md:w-1/2 text-black text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed md:leading-8 px-0 md:px-0 space-y-4">
+          <div className="w-full md:w-1/2 text-black text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed md:leading-8 space-y-4">
             {paragraphs.map((text, idx) => (
               <p key={idx}>{text}</p>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -2,7 +2,7 @@ import { FaRegGem } from "react-icons/fa";
 
 const NewSection = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 px-4 sm:px-8 lg:px-16 py-12">
             {/* Left Side */}
             <div className="bg-[#003366] text-white p-6 sm:p-10 md:p-16">
                 <h2 className="text-3xl sm:text-4xl font-bold mb-2">ABOUT</h2>
@@ -28,7 +28,6 @@ const NewSection = () => {
                     <div className="flex items-center gap-3 mb-3">
                         <FaRegGem className="text-indigo-700 text-2xl sm:text-3xl" />
                         <h4 className="text-base sm:text-lg font-semibold">OUR COMMITMENT</h4>
-
                     </div>
                     <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                         To deliver premium garments accessories with innovation, sustainability, and unmatched service, while maintaining global standards of quality and reliability.

@@ -13,7 +13,7 @@ const Section2 = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-10 px-4 md:px-10 lg:px-20 overflow-hidden">
+    <section className="bg-gray-50 py-12 px-4 sm:px-8 lg:px-16 overflow-hidden">
       <div className="flex flex-col-reverse lg:flex-row items-center gap-10">
         {/* Left Side with repeatable animation */}
         <motion.div
