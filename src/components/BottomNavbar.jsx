@@ -63,71 +63,21 @@ const BottomNavbar = () => {
             : "opacity-0 -translate-y-5 invisible md:visible md:opacity-100 md:translate-y-0"
         }`}
       >
-        <NavLink
-          to="/"
-          end
-          className={({ isActive }) =>
-            `flex items-center gap-1 py-2 md:py-0 px-4 transition-colors duration-200 ${
-              isActive
-                ? "text-black font-bold underline"
-                : "hover:text-[#016DB8]"
-            }`
-          }
-        >
-          <FiHome /> Home
-        </NavLink>
-
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            `flex items-center gap-1 py-2 md:py-0 px-4 transition-colors duration-200 ${
-              isActive
-                ? "text-black font-bold underline"
-                : "hover:text-[#016DB8]"
-            }`
-          }
-        >
-          <FiInfo /> About Us
-        </NavLink>
-
-        <NavLink
-          to="/products"
-          className={({ isActive }) =>
-            `flex items-center gap-1 py-2 md:py-0 px-4 transition-colors duration-200 ${
-              isActive
-                ? "text-black font-bold underline"
-                : "hover:text-[#016DB8]"
-            }`
-          }
-        >
-          <FiBox /> Products
-        </NavLink>
-
-        <NavLink
-          to="/gallery"
-          className={({ isActive }) =>
-            `flex items-center gap-1 py-2 md:py-0 px-4 transition-colors duration-200 ${
-              isActive
-                ? "text-black font-bold underline"
-                : "hover:text-[#016DB8]"
-            }`
-          }
-        >
-          <FiImage /> Gallery
-        </NavLink>
-
-        <NavLink
-          to="/contact"
-          className={({ isActive }) =>
-            `flex items-center gap-1 py-2 md:py-0 px-4 transition-colors duration-200 ${
-              isActive
-                ? "text-black font-bold underline"
-                : "hover:text-[#016DB8]"
-            }`
-          }
-        >
-          <FiPhone /> Contact Us
-        </NavLink>
+        {[
+          { name: "Home", to: "/", icon: <FiHome /> },
+          { name: "About Us", to: "/about", icon: <FiInfo /> },
+          { name: "Products", to: "/products", icon: <FiBox /> },
+          { name: "Gallery", to: "/gallery", icon: <FiImage /> },
+          { name: "Contact Us", to: "/contact", icon: <FiPhone /> },
+        ].map((link) => (
+          <NavLink
+            key={link.to}
+            to={link.to}
+            className="flex items-center gap-1 py-2 md:py-0 px-4 text-black md:text-white transition-colors duration-200"
+          >
+            {link.icon} {link.name}
+          </NavLink>
+        ))}
       </div>
     </nav>
   );

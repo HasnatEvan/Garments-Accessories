@@ -30,12 +30,10 @@ const ContactIcon = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsVisible(true); // স্ক্রল করলেই দেখাবে
+      setIsVisible(true);
 
-      // আগের timeout থাকলে clear করে দেবে
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
-      // 2 সেকেন্ড যদি স্ক্রল না হয়, তাহলে hide করে দিবে
       timeoutRef.current = setTimeout(() => {
         setIsVisible(false);
       }, 2000);
@@ -52,12 +50,17 @@ const ContactIcon = () => {
     isVisible && (
       <div className="fixed bottom-0 left-0 w-full flex justify-between items-center px-4 md:px-14 py-4 md:py-6 z-50">
         {/* WhatsApp Icon */}
-        <div className="flex items-center space-x-3 transform transition-all duration-300">
+        <div className="relative">
           <div
-            className="bg-green-600 text-white p-3 rounded-full shadow-xl cursor-pointer animate-bounce relative"
+            className="bg-[#46e06c] text-white p-3 rounded-full shadow-xl cursor-pointer animate-bounce relative"
             onClick={handleWhatsapp}
           >
             <FaWhatsapp className="w-6 h-6" />
+            {/* Notification Bubble */}
+            <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full font-bold">
+              1
+            </span>
+
             {isContacting && (
               <span className="text-xs absolute bottom-0 right-0 bg-white text-green-600 rounded-full px-2 py-1">
                 Contacting...

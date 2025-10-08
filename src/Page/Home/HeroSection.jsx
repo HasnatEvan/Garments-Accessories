@@ -2,9 +2,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import image1 from "../../assets/Home_Page/Banner/image02 - Copy.png";
-import image2 from "../../assets/Home_Page/Banner/image03 - Copy.png";
-import image3 from "../../assets/Home_Page/Banner/image04 - Copy.png";
+import image1 from "../../assets/Home_Page/Banner/image02 - Copy.jpg";
+import image2 from "../../assets/Home_Page/Banner/image03 - Copy.jpg";
+import image3 from "../../assets/Home_Page/Banner/image04 - Copy.jpg";
 
 const HeroSection = () => {
   const settings = {
