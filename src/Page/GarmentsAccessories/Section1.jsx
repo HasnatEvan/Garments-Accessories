@@ -1,81 +1,81 @@
 import React, { useRef, useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import { FaChevronRight } from 'react-icons/fa';
-import {  FaTimes } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
 
 // Image imports
-import MetalItem1 from '../../assets/Garments Accessories/Metal_Item1.jpg'
-import MetalItem2 from '../../assets/Garments Accessories/Metal_Item2.jpg'
-import MetalItem3 from '../../assets/Garments Accessories/Metal_Item3.jpg'
-import PlasticItem1 from '../../assets/Garments Accessories/Plastic_Item1.webp'
-import PlasticItem2 from '../../assets/Garments Accessories/Plastic_Item2.jpeg.jpg'
-import PlasticItem3 from '../../assets/Garments Accessories/Plastic_Item3.jpeg.jpg'
+import MetalItem1 from '../../assets/Garments Accessories/Metal_Item1.png'
+import MetalItem2 from '../../assets/Garments Accessories/Metal_Item2.png'
+import MetalItem3 from '../../assets/Garments Accessories/Metal_Item3.png'
+import PlasticItem1 from '../../assets/Garments Accessories/Plastic_Item1.png'
+import PlasticItem2 from '../../assets/Garments Accessories/Plastic_Item2.png'
+import PlasticItem3 from '../../assets/Garments Accessories/Plastic_Item3.png'
 
-import PrintedPoly1 from '../../assets/Garments Accessories/Printed_Poly1.jpg'
-import PrintedPoly2 from '../../assets/Garments Accessories/Printed_Poly2.webp'
-import PrintedPoly3 from '../../assets/Garments Accessories/Printed_Poly3.jpeg'
+import PrintedPoly1 from '../../assets/Garments Accessories/Printed_Poly1.png'
+import PrintedPoly2 from '../../assets/Garments Accessories/Printed_Poly2.png'
+import PrintedPoly3 from '../../assets/Garments Accessories/Printed_Poly3.png'
 
-import JacquardElastic1 from '../../assets/Garments Accessories/Jacquard_Elastic1.jpg'
-import JacquardElastic2 from '../../assets/Garments Accessories/Jacquard_Elastic2.jpeg'
-import JacquardElastic3 from '../../assets/Garments Accessories/Jacquard_Elastic3.jpg'
-import  PULeather1 from '../../assets/Garments Accessories/PU_Leather3.jpg'
-import  PULeather2 from '../../assets/Garments Accessories/PU_Leather2.webp'
-import  PULeather3 from '../../assets/Garments Accessories/PU_Leather1.jpg'
+import JacquardElastic1 from '../../assets/Garments Accessories/Jacquard_Elastic1.png'
+import JacquardElastic2 from '../../assets/Garments Accessories/Jacquard_Elastic2.png'
+import JacquardElastic3 from '../../assets/Garments Accessories/Jacquard_Elastic3.png'
+import PULeather1 from '../../assets/Garments Accessories/PU_Leather3.png'
+import PULeather2 from '../../assets/Garments Accessories/PU_Leather2.png'
+import PULeather3 from '../../assets/Garments Accessories/PU_Leather1.png'
 
 
-import Bow1 from '../../assets/Garments Accessories/Bow1.jpg';
-import Bow2 from '../../assets/Garments Accessories/Bow2.jpg';
-import Bow3 from '../../assets/Garments Accessories/Bow3.jpg';
-import Button1 from '../../assets/Garments Accessories/Button1.jpg';
-import Button2 from '../../assets/Garments Accessories/Button2.jpg';
-import Button3 from '../../assets/Garments Accessories/Button3.jpg';
-import Elastic1 from '../../assets/Garments Accessories/Elastic_1.jpg';
-import Elastic2 from '../../assets/Garments Accessories/Elastic_2.jpg';
-import Elastic3 from '../../assets/Garments Accessories/Elastic_3.jpg';
-import EHangTag1 from '../../assets/Garments Accessories/HangTag_1.jpg';
-import EHangTag2 from '../../assets/Garments Accessories/HangTag_2.jpg';
-import EHangTag3 from '../../assets/Garments Accessories/HangTag_3.jpg';
-import HeatTransfer1 from '../../assets/Garments Accessories/HeatTransfer1.jpg';
+import Bow1 from '../../assets/Garments Accessories/bow (1).png';
+import Bow2 from '../../assets/Garments Accessories/bow (2).png';
+import Bow3 from '../../assets/Garments Accessories/bow (3).png';
+import Button1 from '../../assets/Garments Accessories/button (1).png';
+import Button2 from '../../assets/Garments Accessories/button (2).png';
+import Button3 from '../../assets/Garments Accessories/button (3).png';
+import Elastic1 from '../../assets/Garments Accessories/Elastic_1.png';
+import Elastic2 from '../../assets/Garments Accessories/Elastic_2.png';
+import Elastic3 from '../../assets/Garments Accessories/Elastic_3.png';
+import EHangTag1 from '../../assets/Garments Accessories/HangTag_1.png';
+import EHangTag2 from '../../assets/Garments Accessories/HangTag_2.png';
+import EHangTag3 from '../../assets/Garments Accessories/HangTag_3.png';
+import HeatTransfer1 from '../../assets/Garments Accessories/HeatTransfer1.png';
 import HeatTransfer2 from '../../assets/Garments Accessories/HeatTransfer2.jpg';
 import HeatTransfer3 from '../../assets/Garments Accessories/HeatTransfer3.jpg';
-import Label1 from '../../assets/Garments Accessories/Label_1.jpg';
-import Label2 from '../../assets/Garments Accessories/Label_2.jpg';
-import Label3 from '../../assets/Garments Accessories/Label_3.jpg';
-import MobilonTape1 from '../../assets/Garments Accessories/MobilonTape1.jpg';
-import MobilonTape2 from '../../assets/Garments Accessories/MobilonTape2.jpg';
-import MobilonTape3 from '../../assets/Garments Accessories/MobilonTape3.jpg';
-import PlasticClip1 from '../../assets/Garments Accessories/PlasticClip1.jpg';
-import PlasticClip2 from '../../assets/Garments Accessories/PlasticClip2.jpg';
-import PlasticClip3 from '../../assets/Garments Accessories/PlasticClip3.jpg';
-import PomPom1 from '../../assets/Garments Accessories/PomPom1.jpg';
-import PomPom2 from '../../assets/Garments Accessories/PomPom2.jpg';
-import PomPom3 from '../../assets/Garments Accessories/PomPom3.jpg';
-import RingSlider1 from '../../assets/Garments Accessories/Ring1Slider1.jpg';
-import RingSlider2 from '../../assets/Garments Accessories/RingSlider2.jpg';
-import RingSlider3 from '../../assets/Garments Accessories/RingSlider3.jpg';
-import SatinTape1 from '../../assets/Garments Accessories/SatinTape1.jpg';
-import SatinTape2 from '../../assets/Garments Accessories/SatinTape2.jpg';
-import SatinTape3 from '../../assets/Garments Accessories/SatinTape3.jpg';
-import SilicaGel1 from '../../assets/Garments Accessories/SilicaGel1.jpg';
-import SilicaGel2 from '../../assets/Garments Accessories/SilicaGel2.jpg';
-import SilicaGel3 from '../../assets/Garments Accessories/SilicaGel3.jpg';
-import Sticker1 from '../../assets/Garments Accessories/Sticker1.jpg';
-import Sticker2 from '../../assets/Garments Accessories/Sticker2.jpeg';
-import Sticker3 from '../../assets/Garments Accessories/Sticker3.jpg';
-import TissuePaper1 from '../../assets/Garments Accessories/TissuePaper1.jpg';
-import TissuePaper2 from '../../assets/Garments Accessories/TissuePaper2.jpg';
+import Label1 from '../../assets/Garments Accessories/Label_1.png';
+import Label2 from '../../assets/Garments Accessories/Label_2.png';
+import Label3 from '../../assets/Garments Accessories/Label_3.png';
+import MobilonTape1 from '../../assets/Garments Accessories/MobilonTape1.png';
+import MobilonTape2 from '../../assets/Garments Accessories/MobilonTape2.png';
+import MobilonTape3 from '../../assets/Garments Accessories/MobilonTape3.png';
+import PlasticClip1 from '../../assets/Garments Accessories/PlasticClip1.png';
+import PlasticClip2 from '../../assets/Garments Accessories/PlasticClip2 (1).png';
+import PlasticClip3 from '../../assets/Garments Accessories/PlasticClip3.png';
+import PomPom1 from '../../assets/Garments Accessories/PomPom (1).png';
+import PomPom2 from '../../assets/Garments Accessories/PomPom (2).png';
+import PomPom3 from '../../assets/Garments Accessories/PomPom (3).png';
+import RingSlider1 from '../../assets/Garments Accessories/Ring1Slider1.png';
+import RingSlider2 from '../../assets/Garments Accessories/RingSlider2.png';
+import RingSlider3 from '../../assets/Garments Accessories/RingSlider3.png';
+import SatinTape1 from '../../assets/Garments Accessories/SatinTape1.png';
+import SatinTape2 from '../../assets/Garments Accessories/SatinTape2.png';
+import SatinTape3 from '../../assets/Garments Accessories/SatinTape3.png';
+import SilicaGel1 from '../../assets/Garments Accessories/SilicaGel (1).png';
+import SilicaGel2 from '../../assets/Garments Accessories/SilicaGel (2).png';
+import SilicaGel3 from '../../assets/Garments Accessories/SilicaGel (3).png';
+import Sticker1 from '../../assets/Garments Accessories/Sticker1.png';
+import Sticker2 from '../../assets/Garments Accessories/Sticker2.png';
+import Sticker3 from '../../assets/Garments Accessories/Sticker3.png';
+import TissuePaper1 from '../../assets/Garments Accessories/TissuePaper1.png';
+import TissuePaper2 from '../../assets/Garments Accessories/TissuePaper2.png';
 import TissuePaper3 from '../../assets/Garments Accessories/TissuePaper3.jpg';
-import TwillTape1 from '../../assets/Garments Accessories/TwillTape1.jpg';
-import TwillTape2 from '../../assets/Garments Accessories/TwillTape2.jpg';
-import TwillTape3 from '../../assets/Garments Accessories/TwillTape3.jpg';
+import TwillTape1 from '../../assets/Garments Accessories/TwillTape (1).png';
+import TwillTape2 from '../../assets/Garments Accessories/TwillTape (2).png';
+import TwillTape3 from '../../assets/Garments Accessories/TwillTape (3).png';
 
 // Categories object
 const categories = {
- " Metal Item":[MetalItem1,MetalItem2,MetalItem3],
- " Plastic Item":[PlasticItem1,PlasticItem2,PlasticItem3],
- "Printed Poly":[PrintedPoly1,PrintedPoly2,PrintedPoly3],
- "Jacquard Elastic":[JacquardElastic1,JacquardElastic2,JacquardElastic3],
- " PU Leather":[PULeather1,PULeather2,PULeather3],
+  " Metal Item": [MetalItem1, MetalItem2, MetalItem3],
+  " Plastic Item": [PlasticItem1, PlasticItem2, PlasticItem3],
+  "Printed Poly": [PrintedPoly1, PrintedPoly2, PrintedPoly3],
+  "Jacquard Elastic": [JacquardElastic1, JacquardElastic2, JacquardElastic3],
+  " PU Leather": [PULeather1, PULeather2, PULeather3],
   Bow: [Bow1, Bow2, Bow3],
   Button: [Button1, Button2, Button3],
   Elastic: [Elastic1, Elastic2, Elastic3],
@@ -158,19 +158,20 @@ const Section1 = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                 {images.map((img, idx) => (
-               <div
-  key={idx}
-  onClick={() => openLightbox(img)}
-  className="relative overflow-hidden rounded shadow-lg cursor-pointer"
->
-  <img
-    src={img}
-    alt={`${categoryName} ${idx + 1}`}
-    className="w-full h-48 object-cover rounded"
-  />
-  <div className="absolute inset-0 bg-gradient-to-t from-[#ED1C25] via-[#016DB8] to-transparent opacity-0 flex items-end p-4 rounded">
-  </div>
-</div>
+                  <div
+                    key={idx}
+                    onClick={() => openLightbox(img)}
+                    className="relative overflow-hidden rounded shadow-lg cursor-pointer"
+                  >
+                    <img
+                      src={img}
+                      alt={`${categoryName} ${idx + 1}`}
+                      className="w-full h-auto sm:h-48 object-contain rounded transition-transform duration-300 hover:scale-105"
+                    />
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#ED1C25] via-[#016DB8] to-transparent opacity-0 flex items-end p-4 rounded">
+                    </div>
+                  </div>
 
                 ))}
               </div>
@@ -196,9 +197,10 @@ const Section1 = () => {
           <img
             src={currentImage}
             alt="Enlarged"
-            className="max-w-full max-h-full rounded shadow-lg"
+            className="max-w-full max-h-full rounded shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
+
         </div>
       )}
     </div>

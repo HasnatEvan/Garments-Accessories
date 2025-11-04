@@ -1,3 +1,5 @@
+import React from "react";
+import { motion } from "framer-motion";
 import Image from '../../assets/Home_Page/Image_1.jpg';
 
 const Section1 = () => {
@@ -9,17 +11,37 @@ const Section1 = () => {
     "Our commitment to excellence, innovation, and sustainability makes us the preferred partner for leading brands worldwide."
   ];
 
+  // Variants for staggered animation
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2, // প্রতিটি প্যারাগ্রাফের মধ্যে delay
+      },
+    },
+  };
+
+  const paragraphVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
     <section className="px-4 sm:px-8 lg:px-16 py-12 bg-white">
       <div className="relative z-10">
-        {/* Heading */}
-        <h1 className="text-left text-[18px] sm:text-2xl md:text-4xl font-bold text-[#003366] mb-8 sm:mb-10 leading-tight">
+        {/* Heading with fade-up */}
+        <motion.h1
+          className="text-left text-[18px] sm:text-2xl md:text-4xl font-bold text-[#003366] mb-8 sm:mb-10 leading-tight"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           Welcome To Front Line BD - Garments Accessories <br />
           Manufacturer & Supplier In Bangladesh
-        </h1>
+        </motion.h1>
 
         <div className="flex flex-col md:flex-row items-start md:items-stretch justify-between gap-8 md:gap-16">
-          {/* Image Section */}
+          {/* Image Section (static) */}
           <div className="w-full md:w-1/2 flex justify-center md:justify-start">
             <img
               src={Image}
@@ -29,12 +51,24 @@ const Section1 = () => {
             />
           </div>
 
-          {/* Text Section */}
-          <div className="w-full md:w-1/2 text-black text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed md:leading-8 space-y-4">
+          {/* Text Section with staggered fade-up animation */}
+          <motion.div
+            className="w-full md:w-1/2 text-black text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed md:leading-8 space-y-4"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+          >
             {paragraphs.map((text, idx) => (
-              <p key={idx}>{text}</p>
+              <motion.p
+                key={idx}
+                variants={paragraphVariants}
+                transition={{ duration: 0.6 }}
+              >
+                {text}
+              </motion.p>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

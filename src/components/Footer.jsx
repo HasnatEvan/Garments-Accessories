@@ -12,7 +12,7 @@ import logo from '../assets/Logo/Logo.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black py-12 px-4 sm:px-8 lg:px-16 border-t border-gray-200">
+    <footer className="bg-white text-black py-5 px-4 sm:px-8 lg:px-16 border-t border-gray-200">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
 
         {/* Left section */}
