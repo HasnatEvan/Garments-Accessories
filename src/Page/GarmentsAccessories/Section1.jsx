@@ -4,6 +4,11 @@ import { FaChevronRight } from 'react-icons/fa';
 import { FaTimes } from 'react-icons/fa';
 
 // Image imports
+
+
+import NonWovenInterlining1  from '../../assets/Garments Accessories/Non Woven Interlining (1).png'
+import NonWovenInterlining2  from '../../assets/Garments Accessories/Non Woven Interlining (2).png'
+import NonWovenInterlining3  from '../../assets/Garments Accessories/Non Woven Interlining (3).png'
 import MetalItem1 from '../../assets/Garments Accessories/Metal_Item1.png'
 import MetalItem2 from '../../assets/Garments Accessories/Metal_Item2.png'
 import MetalItem3 from '../../assets/Garments Accessories/Metal_Item3.png'
@@ -18,14 +23,13 @@ import PrintedPoly3 from '../../assets/Garments Accessories/Printed_Poly3.png'
 import JacquardElastic1 from '../../assets/Garments Accessories/Jacquard_Elastic1.png'
 import JacquardElastic2 from '../../assets/Garments Accessories/Jacquard_Elastic2.png'
 import JacquardElastic3 from '../../assets/Garments Accessories/Jacquard_Elastic3.png'
-import PULeather1 from '../../assets/Garments Accessories/PU_Leather3.png'
-import PULeather2 from '../../assets/Garments Accessories/PU_Leather2.png'
-import PULeather3 from '../../assets/Garments Accessories/PU_Leather1.png'
+import PULeather1 from '../../assets/Garments Accessories/PU_Leather (1).png'
+import PULeather2 from '../../assets/Garments Accessories/PU_Leather (2).png'
+import PULeather3 from '../../assets/Garments Accessories/PU_Leather (3).png'
 
 
-import Bow1 from '../../assets/Garments Accessories/bow (1).png';
-import Bow2 from '../../assets/Garments Accessories/bow (2).png';
-import Bow3 from '../../assets/Garments Accessories/bow (3).png';
+
+
 import Button1 from '../../assets/Garments Accessories/button (1).png';
 import Button2 from '../../assets/Garments Accessories/button (2).png';
 import Button3 from '../../assets/Garments Accessories/button (3).png';
@@ -71,12 +75,13 @@ import TwillTape3 from '../../assets/Garments Accessories/TwillTape (3).png';
 
 // Categories object
 const categories = {
+  " PU Leather (TPU)": [PULeather1, PULeather2, PULeather3],
+  " Non Woven Interlining": [NonWovenInterlining1,NonWovenInterlining2,NonWovenInterlining3],
   " Metal Item": [MetalItem1, MetalItem2, MetalItem3],
   " Plastic Item": [PlasticItem1, PlasticItem2, PlasticItem3],
   "Printed Poly": [PrintedPoly1, PrintedPoly2, PrintedPoly3],
   "Jacquard Elastic": [JacquardElastic1, JacquardElastic2, JacquardElastic3],
-  " PU Leather": [PULeather1, PULeather2, PULeather3],
-  Bow: [Bow1, Bow2, Bow3],
+
   Button: [Button1, Button2, Button3],
   Elastic: [Elastic1, Elastic2, Elastic3],
   'Hang Tag': [EHangTag1, EHangTag2, EHangTag3],

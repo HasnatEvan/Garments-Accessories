@@ -40,6 +40,7 @@ const Section2 = () => {
               backgroundColor: 'rgba(255,255,255,0.85)',
             }}
           >
+            {/* Image */}
             <div className="w-32 h-40 shrink-0">
               <img
                 src={person.image}
@@ -48,6 +49,7 @@ const Section2 = () => {
               />
             </div>
 
+            {/* Info */}
             <div className="flex-1 text-center sm:text-left">
               <h3 className="text-xl font-bold text-[#003366] flex items-center justify-center sm:justify-start gap-2">
                 <FiUser /> {person.name}
@@ -55,12 +57,23 @@ const Section2 = () => {
               <p className="text-gray-700 flex items-center justify-center sm:justify-start gap-2 mt-2">
                 <FiBriefcase /> {person.role}
               </p>
-              <p className="text-sm text-gray-800 flex items-center justify-center sm:justify-start gap-2 mt-2">
+
+              {/* Clickable Phone */}
+              <a
+                href={`tel:${person.phone}`}
+                className="text-sm text-gray-800 flex items-center justify-center sm:justify-start gap-2 mt-2 hover:text-[#016DB8] transition-colors duration-200"
+              >
                 <FiPhone /> <span className="font-medium">{person.phone}</span>
-              </p>
-              <p className="text-sm text-gray-800 flex items-center justify-center sm:justify-start gap-2 mt-2">
+              </a>
+
+              {/* Clickable Email */}
+              <a
+                href={`mailto:${person.email}`}
+                className="text-sm text-gray-800 flex items-center justify-center sm:justify-start gap-2 mt-2 hover:text-[#016DB8] transition-colors duration-200"
+              >
                 <FiMail /> <span className="font-medium">{person.email}</span>
-              </p>
+              </a>
+
               <p className="text-gray-800 text-sm mt-4 leading-relaxed text-justify">
                 {person.description}
               </p>

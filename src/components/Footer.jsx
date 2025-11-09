@@ -30,16 +30,29 @@ const Footer = () => {
               Agrabad, Chittagong, Bangladesh
             </p>
           </div>
+
+          {/* Phone Numbers */}
           <div className="flex items-center space-x-3">
             <FaPhoneAlt className="text-[#ED1C25]" />
-            <div className="text-gray-700 text-sm md:text-base">
-              <p>+8801830226281</p>
-              <p>+8801815814145</p>
+            <div className="text-gray-700 text-sm md:text-base flex flex-col">
+              <a href="tel:+8801830226281" className="hover:text-[#016DB8] transition-colors duration-200">
+                +8801830226281
+              </a>
+              <a href="tel:+8801815814145" className="hover:text-[#016DB8] transition-colors duration-200">
+                +8801815814145
+              </a>
             </div>
           </div>
+
+          {/* Email */}
           <div className="flex items-center space-x-3">
             <FaEnvelope className="text-[#ED1C25]" />
-            <p className="text-gray-700 text-sm md:text-base">info@frontlinebd.net</p>
+            <a
+              href="mailto:info@frontlinebd.net"
+              className="text-gray-700 text-sm md:text-base hover:text-[#016DB8] transition-colors duration-200"
+            >
+              info@frontlinebd.net
+            </a>
           </div>
         </div>
 
@@ -47,56 +60,23 @@ const Footer = () => {
         <div className="w-full md:w-1/3">
           <h2 className="text-[#016DB8] text-xl font-semibold mb-4">Quick Link</h2>
           <ul className="text-black font-semibold space-y-2 text-sm md:text-base">
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  `cursor-pointer transition-colors duration-200 ${isActive ? 'text-[#016DB8]' : 'hover:text-[#016DB8]'}`
-                }
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                  `cursor-pointer transition-colors duration-200 ${isActive ? 'text-[#016DB8]' : 'hover:text-[#016DB8]'}`
-                }
-              >
-                About Us
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/products"
-                className={({ isActive }) =>
-                  `cursor-pointer transition-colors duration-200 ${isActive ? 'text-[#016DB8]' : 'hover:text-[#016DB8]'}`
-                }
-              >
-                Product
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/gallery"
-                className={({ isActive }) =>
-                  `cursor-pointer transition-colors duration-200 ${isActive ? 'text-[#016DB8]' : 'hover:text-[#016DB8]'}`
-                }
-              >
-                Gallery
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) =>
-                  `cursor-pointer transition-colors duration-200 ${isActive ? 'text-[#016DB8]' : 'hover:text-[#016DB8]'}`
-                }
-              >
-                Contact Us
-              </NavLink>
-            </li>
+            {['/', '/about', '/products', '/gallery', '/contact'].map((path, idx) => {
+              const names = ['Home', 'About Us', 'Product', 'Gallery', 'Contact Us'];
+              return (
+                <li key={path}>
+                  <NavLink
+                    to={path}
+                    className={({ isActive }) =>
+                      `cursor-pointer transition-colors duration-200 ${
+                        isActive ? 'text-[#016DB8]' : 'hover:text-[#016DB8]'
+                      }`
+                    }
+                  >
+                    {names[idx]}
+                  </NavLink>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
