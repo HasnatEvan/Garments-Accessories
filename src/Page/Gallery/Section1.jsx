@@ -31,14 +31,15 @@ const Section1 = () => {
 
   return (
     <div className="px-4 sm:px-6 md:px-10 lg:px-20 py-8">
-      {/* Masonry grid works across all devices */}
+      {/* Masonry Grid */}
       <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
         {images.map((img, index) => (
           <img
             key={index}
             src={img}
+            loading="lazy"  // <-- Lazy Loading Added
             alt={`Gallery ${index + 1}`}
-            className="w-full mb-4  shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300 break-inside-avoid"
+            className="w-full mb-4 shadow-md hover:scale-105 hover:shadow-lg transition-all duration-300 break-inside-avoid rounded-md"
           />
         ))}
       </div>

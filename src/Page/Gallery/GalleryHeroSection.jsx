@@ -1,12 +1,18 @@
-import { FiImage } from 'react-icons/fi'; // Icon related to gallery/image
+import { FiImage } from 'react-icons/fi';
 import Banner from '../../assets/Gallery/banner.jpg';
 
 const GalleryHeroSection = () => {
   return (
-    <section
-      className="relative w-full h-[35vh] sm:h-[45vh] md:h-[55vh] bg-fixed bg-center bg-cover"
-      style={{ backgroundImage: `url(${Banner})` }}
-    >
+    <section className="relative w-full h-[35vh] sm:h-[45vh] md:h-[55vh]">
+
+      {/* Lazy Loaded Background Image */}
+      <img
+        src={Banner}
+        loading="lazy"
+        alt="Gallery Banner"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50" />
 

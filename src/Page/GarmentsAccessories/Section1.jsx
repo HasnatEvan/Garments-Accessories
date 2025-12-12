@@ -124,91 +124,92 @@ const Section1 = () => {
   };
 
   return (
-    <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-6">
-      <div className="flex flex-col md:flex-row gap-6">
-        {/* Sidebar */}
-        <div className="md:w-1/4 w-full">
-          <div className="sticky top-6 bg-white p-4 ">
-            <h2 className="relative font-semibold mb-4 text-center text-2xl text-gray-800">
-              Category
-              <span className="absolute left-1/2 -bottom-1 w-24 h-[2px] bg-[#016DB8] transform -translate-x-1/2 rounded"></span>
-            </h2>
+ <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-6">
+  <div className="flex flex-col md:flex-row gap-6">
 
-            <div className="flex flex-col ">
-              {Object.keys(categories).map((category) => (
-                <button
-                  key={category}
-                  onClick={() => scrollToCategory(category)}
-                  className="flex items-center gap-2 text-sm py-1 px-2 border-b border-gray-300 text-gray-700 hover:text-[#016DB8] transition-colors text-left"
-                >
-                  <FaChevronRight className="text-white text-xs bg-[#ED1C25] rounded-full" />
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
+    {/* Sidebar */}
+    <div className="md:w-1/4 w-full">
+      <div className="sticky top-6 bg-white p-4 rounded-md shadow-sm">
+        <h2 className="relative font-semibold mb-4 text-center text-2xl text-gray-800">
+          Category
+          <span className="absolute left-1/2 -bottom-1 w-24 h-[2px] bg-[#016DB8] transform -translate-x-1/2 rounded"></span>
+        </h2>
 
-        {/* Content */}
-        <main className="md:w-3/4 w-full">
-          {Object.entries(categories).map(([categoryName, images]) => (
-            <section
-              key={categoryName}
-              ref={sectionRefs[categoryName]}
-              className="mb-14 scroll-mt-24"
+        <div className="flex flex-col">
+          {Object.keys(categories).map((category) => (
+            <button
+              key={category}
+              onClick={() => scrollToCategory(category)}
+              className="flex items-center gap-2 text-sm py-2 px-3 border-b border-gray-200 text-gray-700 hover:text-[#016DB8] transition-colors text-left"
             >
-              <h2 className="flex items-center gap-2 text-2xl font-bold text-[#016DB8] mb-4">
-                <FaCheckCircle /> {categoryName}
-              </h2>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-                {images.map((img, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => openLightbox(img)}
-                    className="relative overflow-hidden rounded shadow-lg cursor-pointer"
-                  >
-                    <img
-                      src={img}
-                      alt={`${categoryName} ${idx + 1}`}
-                      className="w-full h-auto sm:h-48 object-contain rounded transition-transform duration-300 hover:scale-105"
-                    />
-
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#ED1C25] via-[#016DB8] to-transparent opacity-0 flex items-end p-4 rounded">
-                    </div>
-                  </div>
-
-                ))}
-              </div>
-            </section>
+              <FaChevronRight className="text-white text-xs bg-[#ED1C25] rounded-full" />
+              {category}
+            </button>
           ))}
-        </main>
-      </div>
-
-      {/* Lightbox Modal */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-          onClick={closeLightbox}
-        >
-          <button
-            className="absolute top-6 right-6 text-white text-3xl"
-            onClick={closeLightbox}
-            aria-label="Close"
-          >
-            <FaTimes />
-          </button>
-
-          <img
-            src={currentImage}
-            alt="Enlarged"
-            className="max-w-full max-h-full rounded shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          />
-
         </div>
-      )}
+      </div>
     </div>
+
+    {/* Main Content */}
+    <main className="md:w-3/4 w-full mt-2 md:mt-5">
+      {Object.entries(categories).map(([categoryName, images]) => (
+        <section
+          key={categoryName}
+          ref={sectionRefs[categoryName]}
+          className="mb-14 scroll-mt-24"
+        >
+          <h2 className="flex items-center gap-2 text-2xl font-bold text-[#016DB8] mb-4">
+            <FaCheckCircle /> {categoryName}
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+            {images.map((img, idx) => (
+              <div
+                key={idx}
+                onClick={() => openLightbox(img)}
+                className="relative overflow-hidden rounded shadow-lg cursor-pointer bg-white"
+              >
+                <img
+                  src={img}
+                  loading="lazy"
+                  alt={`${categoryName} ${idx + 1}`}
+                  className="w-full h-auto sm:h-48 object-contain rounded transition-transform duration-300 hover:scale-105"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-[#ED1C25] via-[#016DB8] to-transparent opacity-0 flex items-end p-4 rounded"></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </main>
+
+  </div>
+
+  {/* Lightbox Modal */}
+  {isOpen && (
+    <div
+      className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4"
+      onClick={closeLightbox}
+    >
+      <button
+        className="absolute top-6 right-6 text-white text-3xl"
+        onClick={closeLightbox}
+        aria-label="Close"
+      >
+        <FaTimes />
+      </button>
+
+      <img
+        src={currentImage}
+        alt="Enlarged"
+        className="max-w-full max-h-full rounded shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  )}
+</div>
+
   );
 };
 

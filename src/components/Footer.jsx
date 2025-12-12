@@ -12,44 +12,49 @@ import logo from '../assets/Logo/Logo.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-black py-5 px-4 sm:px-8 lg:px-16 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
+    <footer className="bg-white text-black py-8 px-4 sm:px-8 lg:px-16 border-t border-gray-200">
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
 
         {/* Left section */}
-        <div className="flex flex-col space-y-4 w-full md:w-1/3">
-          <div className="flex items-center space-x-3">
-            <img src={logo} alt="Front Line Logo" className="w-12 h-12 object-contain" />
+        <div className="space-y-5">
+          <div className="flex items-center gap-3">
+            <img
+              src={logo}
+              loading="lazy"
+              alt="Front Line Logo"
+              className="w-12 h-12 object-contain"
+            />
             <h1 className="text-2xl md:text-3xl font-extrabold text-[#016DB8]">
               <span className="text-[#ED1C25]">Front Line</span> BD
             </h1>
           </div>
-          <div className="flex items-start space-x-3">
+
+          <div className="flex items-start gap-3">
             <FaHome className="text-[#ED1C25] mt-1" />
-            <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+            <p className="text-gray-700 text-sm md:text-base leading-relaxed">
               124, Sk. Mujib Road, (1st Floor)<br />
               Agrabad, Chittagong, Bangladesh
             </p>
           </div>
 
-          {/* Phone Numbers */}
-          <div className="flex items-center space-x-3">
-            <FaPhoneAlt className="text-[#ED1C25]" />
-            <div className="text-gray-700 text-sm md:text-base flex flex-col">
-              <a href="tel:+8801830226281" className="hover:text-[#016DB8] transition-colors duration-200">
+          <div className="flex items-start gap-3">
+            <FaPhoneAlt className="text-[#ED1C25] mt-1" />
+            <div className="flex flex-col text-gray-700 text-sm md:text-base">
+              <a href="tel:+8801830226281" className="hover:text-[#016DB8] transition">
                 +8801830226281
               </a>
-              <a href="tel:+8801815814145" className="hover:text-[#016DB8] transition-colors duration-200">
+              <a href="tel:+8801815814145" className="hover:text-[#016DB8] transition">
                 +8801815814145
               </a>
             </div>
           </div>
 
-          {/* Email */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center gap-3">
             <FaEnvelope className="text-[#ED1C25]" />
             <a
               href="mailto:info@frontlinebd.net"
-              className="text-gray-700 text-sm md:text-base hover:text-[#016DB8] transition-colors duration-200"
+              className="text-gray-700 text-sm md:text-base hover:text-[#016DB8] transition"
             >
               info@frontlinebd.net
             </a>
@@ -57,9 +62,9 @@ const Footer = () => {
         </div>
 
         {/* Middle section */}
-        <div className="w-full md:w-1/3">
+        <div>
           <h2 className="text-[#016DB8] text-xl font-semibold mb-4">Quick Link</h2>
-          <ul className="text-black font-semibold space-y-2 text-sm md:text-base">
+          <ul className="space-y-2 font-medium text-sm md:text-base">
             {['/', '/about', '/products', '/gallery', '/contact'].map((path, idx) => {
               const names = ['Home', 'About Us', 'Product', 'Gallery', 'Contact Us'];
               return (
@@ -67,8 +72,8 @@ const Footer = () => {
                   <NavLink
                     to={path}
                     className={({ isActive }) =>
-                      `cursor-pointer transition-colors duration-200 ${
-                        isActive ? 'text-[#016DB8]' : 'hover:text-[#016DB8]'
+                      `transition-colors ${
+                        isActive ? 'text-[#016DB8] font-semibold' : 'hover:text-[#016DB8]'
                       }`
                     }
                   >
@@ -81,29 +86,28 @@ const Footer = () => {
         </div>
 
         {/* Right section */}
-        <div className="w-full md:w-1/3">
+        <div>
           <h2 className="text-[#016DB8] text-xl font-semibold mb-4">Keep In Touch</h2>
-          <div className="flex space-x-4">
+          <div className="flex gap-4">
             <a
               href="#"
-              className="bg-[#1877F2] rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-blue-800 transition-colors duration-200"
-              aria-label="Facebook"
+              className="bg-[#1877F2] w-10 h-10 flex items-center justify-center rounded-full text-white hover:bg-blue-800 transition"
             >
               <FaFacebookF />
             </a>
+
             <a
               href="#"
-              className="bg-[#1DA1F2] rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-sky-600 transition-colors duration-200"
-              aria-label="Twitter"
+              className="bg-[#1DA1F2] w-10 h-10 flex items-center justify-center rounded-full text-white hover:bg-sky-600 transition"
             >
               <FaTwitter />
             </a>
+
             <a
               href="https://wa.me/8801830226281"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#25D366] rounded-full w-10 h-10 flex items-center justify-center text-white hover:bg-green-600 transition-colors duration-200"
-              aria-label="WhatsApp"
+              className="bg-[#25D366] w-10 h-10 flex items-center justify-center rounded-full text-white hover:bg-green-600 transition"
             >
               <FaWhatsapp />
             </a>
@@ -112,12 +116,11 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="mt-16 text-gray-600 text-center text-xs md:text-sm border-t border-gray-300 pt-4">
-        Copyright © 2025 <strong>Front Line Bd.</strong> All Rights Reserved.
+      <div className="mt-10 text-center text-gray-600 text-xs md:text-sm">
+        © 2025 <strong>Front Line BD</strong>. All Rights Reserved.
       </div>
 
-      {/* Developer credit */}
-      <div className="text-gray-500 text-center text-xs mt-2">
+      <div className="text-center text-gray-500 text-xs mt-1">
         Developed by{' '}
         <a
           href="https://www.facebook.com/profile.php?id=61575431671174"
@@ -128,6 +131,7 @@ const Footer = () => {
           Hasnat Evan
         </a>
       </div>
+
     </footer>
   );
 };

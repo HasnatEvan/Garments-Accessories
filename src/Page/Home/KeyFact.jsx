@@ -4,13 +4,16 @@ import image from "../../assets/KeyFact/image01.jpg";
 const KeyFact = () => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-12 bg-white px-4 sm:px-8 lg:px-16 py-12">
+
       {/* Left Side Image + Title */}
       <div className="relative flex items-center justify-center md:col-span-5">
         <img
           src={image}
+          loading="lazy"   // ⭐ Lazy Loading Added
           alt="Key Facts"
           className="w-full h-[280px] sm:h-[380px] md:h-[600px] object-cover"
         />
+
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60 flex items-center justify-center md:justify-start px-4 sm:px-8 lg:px-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight text-center md:text-left">
@@ -22,6 +25,7 @@ const KeyFact = () => {
 
       {/* Right Side Facts */}
       <div className="bg-[#003366] text-white p-6 sm:p-10 md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+
         {/* Box 1 */}
         <div className="text-center flex flex-col items-center">
           <FaLightbulb className="text-3xl sm:text-4xl md:text-5xl mb-3" />
@@ -73,6 +77,7 @@ const KeyFact = () => {
             make us a trusted partner worldwide.
           </p>
         </div>
+
       </div>
     </section>
   );
